@@ -9,8 +9,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersService {
-  private url = 'http://localhost:3000/api/users';
-  private url2 = 'http://localhost:3000/api/user';
+  private url = 'http://localhost:4000/api/users';
+  private url2 = 'http://localhost:4000/api/user';
   constructor(private http: HttpClient) { }
 
   getAllusers(): Observable<IUsers[]> {

@@ -8,8 +8,8 @@ import { IProject } from '../entities/project'; // Đảm bảo đường dẫn 
 
 @Injectable()
 export class ProjectService {
-  private url = 'http://localhost:3000/api/projects';
-  private url2 = 'http://localhost:3000/api/project';
+  private url = 'http://localhost:4000/api/projects';
+  private url2 = 'http://localhost:4000/api/project';
   constructor(private http: HttpClient) { }
 
   getAllprojects(): Observable<IProject[]> {
