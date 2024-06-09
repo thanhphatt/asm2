@@ -8,8 +8,8 @@ import { ITask } from '../entities/task';
 
 @Injectable()
 export class TaskService {
-  private url = 'http://localhost:3000/api/tasks';
-  private url2 = 'http://localhost:3000/api/task';
+  private url = 'http://localhost:4000/api/tasks';
+  private url2 = 'http://localhost:4000/api/task';
   constructor(private http: HttpClient) { }
 
   getAlltasks(): Observable<ITask[]> {

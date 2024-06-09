@@ -19,6 +19,8 @@ import { ProjectService } from './admin/services/project.service';
 import { TaskService } from './admin/services/task.service';
 import { UsersService } from './admin/services/user.service';
 import { ProjectDetailsComponent } from './project-detail/project-detail.component';
+import { UsersComponent } from './admin/users/users.component';
+
 
 @NgModule({
   declarations: [
@@ -31,11 +33,11 @@ import { ProjectDetailsComponent } from './project-detail/project-detail.compone
     projectsComponent,
     TaskComponent,
     LoginComponent,
-    AddTaskComponent,
-     
+    AddTaskComponent, 
     AddEmployeeComponent,
     AddProjectComponent,
     ProjectDetailsComponent,
+    UsersComponent
     
    
   ],
