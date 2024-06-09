@@ -20,7 +20,7 @@ import { TaskService } from './admin/services/task.service';
 import { UsersService } from './admin/services/user.service';
 import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { UsersComponent } from './admin/users/users.component';
-
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { UsersComponent } from './admin/users/users.component';
     AddEmployeeComponent,
     AddProjectComponent,
     ProjectDetailsComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailComponent
     
    
   ],

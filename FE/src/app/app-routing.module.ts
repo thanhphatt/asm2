@@ -12,6 +12,7 @@ import { AddEmployeeComponent } from './admin/add-employee/add-employee.componen
 import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { UsersComponent } from './admin/users/users.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'add-employee', component: AddEmployeeComponent },
   { path: 'add-project', component: AddProjectComponent },
   { path: 'project/:id', component: ProjectDetailsComponent },
-  { path: 'user', component: UsersComponent  }
-  
+  { path: 'user', component: UsersComponent  },
+  { path: 'user/:id', component: UserDetailComponent },
+
 ];
 
 @NgModule({
