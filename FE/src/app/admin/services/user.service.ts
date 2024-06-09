@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UsersService {
   private url = 'http://localhost:4000/api/users';
-  private url2 = 'http://localhost:4000/api/user';
+  private url2 = 'http://localhost:4000/api/users';
   constructor(private http: HttpClient) { }
 
   getAllusers(): Observable<IUsers[]> {
