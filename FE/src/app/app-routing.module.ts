@@ -13,7 +13,6 @@ import { ProjectDetailsComponent } from './project-detail/project-detail.compone
 import { UsersComponent } from './admin/users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -24,7 +23,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'add-task', component: AddTaskComponent },
   { path: 'add-project', component: AddProjectComponent },
-  { path: 'add-user', component: AddUserComponent },
+  { path: 'add-user', component: AddProjectComponent },
+
   { path: 'project/:id', component: ProjectDetailsComponent },
   { path: 'user', component: UsersComponent  },
   { path: 'user/:id', component: UserDetailComponent },

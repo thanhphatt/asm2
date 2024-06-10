@@ -25,6 +25,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 @NgModule({
   declarations: [
     AppComponent,
+    UserDetailComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
@@ -37,9 +38,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     AddProjectComponent,
     ProjectDetailsComponent,
     UsersComponent,
-    UserDetailComponent,
-    AddUserComponent
-    
+    AddUserComponent,
+    UserDetailComponent
    
   ],
   imports: [
