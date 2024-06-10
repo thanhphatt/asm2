@@ -8,7 +8,7 @@ import { ITask } from '../entities/task';
 
 @Injectable()
 export class TaskService {
-  private url = 'http://localhost:4000/api/tasks';
+  private url = 'http://localhost:4000/api/task';
   private url2 = 'http://localhost:4000/api/task';
   constructor(private http: HttpClient) { }
 
@@ -29,15 +29,15 @@ export class TaskService {
       .catch(this.handleError);
   }
 
-  deletetask(id: string): Observable<void> {
-    console.log(`Xóa task với ID: ${id}`); 
-    return this.http.delete<void>(`${this.url}/${id}`)
+  deletetask(_id: string): Observable<void> {
+    console.log(`Xóa task với ID: ${_id}`); 
+    return this.http.delete<void>(`${this.url}/${_id}`)
       .catch(this.handleError);
   }
   
   updatetask(task: ITask): Observable<ITask> {
-    if (task._id && task._id) {
-      const taskId = task._id;
+    if (task.id && task.id) {
+      const taskId = task.id;
       return this.http.put<ITask>(`${this.url}/${taskId}`, task)
         .catch(this.handleError);
     } else {
