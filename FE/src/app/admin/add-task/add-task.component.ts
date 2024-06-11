@@ -19,9 +19,7 @@ export class AddTaskComponent implements OnInit {
     priority: 'low',
     start_date: new Date(),
     due_date: new Date(),
-   
   };
-
 
   tasks: ITask[] = [];
 
@@ -36,10 +34,11 @@ export class AddTaskComponent implements OnInit {
       this.taskService.createtask(this.task).subscribe(
         response => {
           this.tasks.push(response);
-        
+          // Reset the form after successfully adding the task
+          form.resetForm();
         },
         error => {
-          console.error('lỗi mẹ nó rồi ', error);
+          console.error('Lỗi khi thêm task:', error);
         }
       );
     }
@@ -51,7 +50,7 @@ export class AddTaskComponent implements OnInit {
         this.tasks = tasks;
       },
       error => {
-        console.error('Error fetching tasks', error);
+        console.error('Lỗi khi lấy danh sách tasks:', error);
       }
     );
   }
