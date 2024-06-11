@@ -11,7 +11,6 @@ import { ITask } from '../entities/task';
 export class AddTaskComponent implements OnInit {
 
   task: ITask = {
-    id: '',
     name: '',
     description: '',
     assignee_id: '',
@@ -19,6 +18,9 @@ export class AddTaskComponent implements OnInit {
     priority: 'low',
     start_date: new Date(),
     due_date: new Date(),
+    
+    id: '',
+
   };
 
   tasks: ITask[] = [];
@@ -34,11 +36,10 @@ export class AddTaskComponent implements OnInit {
       this.taskService.createtask(this.task).subscribe(
         response => {
           this.tasks.push(response);
-          // Reset the form after successfully adding the task
-          form.resetForm();
+          
         },
         error => {
-          console.error('Lỗi khi thêm task:', error);
+          console.error('lỗi mẹ nó rồi ', error);
         }
       );
     }
@@ -50,7 +51,7 @@ export class AddTaskComponent implements OnInit {
         this.tasks = tasks;
       },
       error => {
-        console.error('Lỗi khi lấy danh sách tasks:', error);
+        console.error('Error fetching tasks', error);
       }
     );
   }
