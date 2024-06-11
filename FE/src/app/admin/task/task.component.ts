@@ -26,4 +26,17 @@ export class TaskComponent implements OnInit {
       error => console.error('Lỗi khi lấy bài viết:', error)
     );
   }
+  deleteTask(taskId: string) {
+    this.taskService.deletetask(taskId).subscribe(
+      () => {
+        console.log('Task deleted successfully');
+        // Load lại trang sau khi xoá thành công
+        window.location.reload();
+      },
+      error => console.error('Lỗi khi xoá task:', error)
+    );
+  }
+  
+
+
 }
