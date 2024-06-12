@@ -6,11 +6,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-
+import { catchError } from 'rxjs/operators';
 @Injectable()
 export class UsersService {
   private url = 'http://localhost:4000/api/users';
-  private url2 = 'http://localhost:4000/api/users';
   constructor(private http: HttpClient) { }
 
   getAllusers(): Observable<IUsers[]> {
@@ -22,12 +21,15 @@ export class UsersService {
     if (!id) {
       return Observable.throw('ID không hợp lệ');
     }
-    return this.http.get<IUsers>(`${this.url2}/${id}`)
+    return this.http.get<IUsers>(`${this.url}/${id}`)
       .catch(this.handleError);
   }
-  createuser(user: IUsers): Observable<IUsers> {
-    return this.http.post<IUsers>(this.url, user)
-      .catch(this.handleError);
+  
+  createuser(user: any): Observable<any> {
+    return this.http.post(this.url, user)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   deleteuser(id: string): Observable<void> {

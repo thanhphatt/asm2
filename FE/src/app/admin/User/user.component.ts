@@ -3,9 +3,9 @@ import { UsersService } from '../services/user.service';
 import { IUsers } from '../entities/user';// Đảm bảo đường dẫn đúng
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
 export class UsersComponent implements OnInit {
 

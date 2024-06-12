@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết khách hàng</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="../../assets/admin/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="../../assets/admin/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="../../assets/admin/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Chi Tiết Khách Hàng</h3>
+                    </div>
+                </div>
+                <hr />
+                <div class="row" *ngIf="user">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <tbody>
+                                            <tr>
+                                                <td><h4>Mã nhân viên</h4></td>
+                                                <td>{{ user._id}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Tên khách hàng</h4></td>
+                                                <td>{{ user.username }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Email</h4></td>
+                                                <td>{{ user.email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Mật khẩu</h4></td>
+                                                <td>{{ user.password }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Nhóm thực hiện</h4></td>
+                                                <td>{{ user.team }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Trạng thái</h4></td>
+                                                <td>{{ user.role }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Ngày tạo</h4></td>
+                                                <td>{{ user.created_at }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Ngày cập nhật</h4></td>
+                                                <td>{{ user.updated_at }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <button (click)="onBack()" class="btn">
+                                        <i class="fa fa-arrow-left"></i> Quay lại
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/admin/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="../../assets/admin/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="../../assets/admin/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="../../assets/admin/js/custom.js"></script>
+</body>
+</html>
