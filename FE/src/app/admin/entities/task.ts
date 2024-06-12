@@ -7,7 +7,7 @@ export interface ITask {
   assignee_id: string;
   status: string;
   priority: string;
-  start_date?: Date; // Thêm thuộc tính này
+  start_date?: Date;
   due_date?: Date;
 
 }
