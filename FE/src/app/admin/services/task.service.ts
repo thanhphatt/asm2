@@ -4,44 +4,47 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { ITask } from '../entities/task';
+import { Router } from '@angular/router';
+
+import { ITask } from '../entities/task'
 
 @Injectable()
 export class TaskService {
   private url = 'http://localhost:4000/api/task';
-  private url2 = 'http://localhost:4000/api/task';
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   getAlltasks(): Observable<ITask[]> {
     return this.http.get<ITask[]>(this.url)
       .map(response => response as ITask[])
       .catch(this.handleError);
   }
+
   getTaskById(id: string): Observable<ITask> {
     if (!id) {
       return Observable.throw('ID không hợp lệ');
     }
-    return this.http.get<ITask>(`${this.url2}/${id}`)
-      .catch(this.handleError);
-  }
-  createtask(task: ITask): Observable<ITask> {
-    return this.http.post<ITask>(this.url, task)
+    return this.http.get<ITask>(`${this.url}/${id}`)
       .catch(this.handleError);
   }
 
-  deletetask(_id: string): Observable<void> {
-    console.log(`Xóa task với ID: ${_id}`); 
-    return this.http.delete<void>(`${this.url}/${_id}`)
+  
+  deletetask(id: string): Observable<void> {
+    console.log(`Xóa task với ID: ${id}`); 
+    return this.http.delete<void>(`${this.url}/${id}`)
       .catch(this.handleError);
   }
-  
+
+  createtask(post:any): Observable<any> {
+    return this.http.post(`${this.url}`, post);
+  }
+
   updatetask(task: ITask): Observable<ITask> {
-    if (task.id && task.id) {
-      const taskId = task.id;
+    if (task._id) {
+      const taskId = task._id;
       return this.http.put<ITask>(`${this.url}/${taskId}`, task)
         .catch(this.handleError);
     } else {
-      // Xử lý khi _id không hợp lệ
       console.error('ID task không hợp lệ!');
       return Observable.throw('ID task không hợp lệ!');
     }
