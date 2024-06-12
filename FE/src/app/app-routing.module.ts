@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'add-task', component: AddTaskComponent },
   { path: 'add-project', component: AddProjectComponent },
-  { path: 'add-user', component: AddProjectComponent },
+  { path: 'add-user', component: AddUserComponent },
 
   { path: 'project/:id', component: ProjectDetailsComponent },
   { path: 'user', component: UsersComponent  },
