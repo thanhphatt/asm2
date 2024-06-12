@@ -29,5 +29,19 @@ export class UsersComponent implements OnInit {
   viewUserDetail(id: string) {
     this.router.navigate(['/user', id]);
   }
+  deleteUser(id: string) {
+    this.userService.deleteuser(id).subscribe(
+      response => {
+        console.log('User deleted:', response); // Debugging line
+        // Cập nhật danh sách người dùng sau khi xóa
+        this.users = this.users.filter(user => user._id.$oid !== id);
+        // Load lại trang
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/user']);
+        });
+      },
+      error => console.error('Lỗi khi xóa người dùng:', error)
+    );
+  }
 
 }

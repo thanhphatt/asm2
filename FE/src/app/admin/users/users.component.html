@@ -59,6 +59,7 @@
                           <td>{{ user.created_at }}</td>
                           <td>{{ user.updated_at }}</td>
                           <td><a [routerLink]="['/user', user._id]">Chi tiết</a></td>
+                          <button class="btn btn-danger" (click)="deleteUser(user._id)">Xóa</button>
                         </tr>
                       </tbody>
                     </table>

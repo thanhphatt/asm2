@@ -8,7 +8,7 @@ import { IProject } from '../entities/project'; // Đảm bảo đường dẫn 
 
 @Injectable()
 export class ProjectService {
-  private url = 'http://localhost:4000/api/projects';
+  private url = 'http://localhost:4000/api/project';
   private url2 = 'http://localhost:4000/api/project';
   constructor(private http: HttpClient) { }
 
@@ -31,7 +31,7 @@ export class ProjectService {
 
   deleteproject(id: string): Observable<void> {
     console.log(`Deleting project with ID: ${id}`); // Log để kiểm tra
-    return this.http.delete<void>(`${this.url}/${id}`)
+    return this.http.delete<void>(`${this.url2}/${id}`)
       .catch(this.handleError);
   }
   

@@ -12,7 +12,6 @@ import { projectsComponent } from './admin/project/project.component';
 import { TaskComponent } from './admin/task/task.component';
 import { LoginComponent } from './login/login.component';
 import { AddTaskComponent } from './admin/add-task/add-task.component';
-import { AddEmployeeComponent } from './admin/add-employee/add-employee.component';
 import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { HttpClientModule } from '@angular/common/http';  // Nhập HttpClientModule
 import { ProjectService } from './admin/services/project.service';
@@ -21,6 +20,7 @@ import { UsersService } from './admin/services/user.service';
 import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { UsersComponent } from './admin/users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +34,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     TaskComponent,
     LoginComponent,
     AddTaskComponent, 
-    AddEmployeeComponent,
     AddProjectComponent,
     ProjectDetailsComponent,
     UsersComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    AddUserComponent
     
    
   ],

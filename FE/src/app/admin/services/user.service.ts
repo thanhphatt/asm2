@@ -9,8 +9,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersService {
-  private url = 'http://localhost:4000/api/users';
-  private url2 = 'http://localhost:4000/api/users';
+  private url = 'http://localhost:4000/api/user';
+  // private url2 = 'http://localhost:4000/api/user';
   constructor(private http: HttpClient) { }
 
   getAllusers(): Observable<IUsers[]> {
@@ -22,7 +22,7 @@ export class UsersService {
     if (!id) {
       return Observable.throw('ID không hợp lệ');
     }
-    return this.http.get<IUsers>(`${this.url2}/${id}`)
+    return this.http.get<IUsers>(`${this.url}/${id}`)
       .catch(this.handleError);
   }
   createuser(user: IUsers): Observable<IUsers> {

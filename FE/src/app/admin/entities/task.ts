@@ -1,13 +1,13 @@
 export interface ITask {
-    _id: string;
-    project_id: string;
-    name: string;
-    description: string;
-    assignee_id: string;
-    status: string;
-    priority: string;
-    due_date: Date;
-    created_at: Date;
-    updated_at: Date;
-  }
   
+  _id: any;
+  id: string;
+  name: string;
+  description: string;
+  assignee_id: string;
+  status: string;
+  priority: string;
+  start_date?: Date; // Thêm thuộc tính này
+  due_date?: Date;
+
+}

@@ -30,5 +30,18 @@ export class projectsComponent implements OnInit {
   viewProjectDetail(id: string) {
     this.router.navigate(['/project', id]);
   }
+
+  deleteProject(id: string) {
+    this.projectService.deleteproject(id).subscribe(
+      response => {
+        console.log('Project deleted:', response); // Debugging line
+        // Tải lại trang hiện tại
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/project']);
+        });
+      },
+      error => console.error('Lỗi khi xóa dự án:', error)
+    );
+  }
   
 }
