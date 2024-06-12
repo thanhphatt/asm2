@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 // Schema cho Tasks
 const taskSchema = new Schema({
+  project_id: { type: Schema.Types.ObjectId, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
     assignee_id: { type: Schema.Types.ObjectId, required: true },

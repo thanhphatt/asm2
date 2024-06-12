@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TaskService } from '../services/task.service';
-import { ITask } from '../entities/task';
 
 @Component({
   selector: 'app-add-task',
@@ -10,48 +9,37 @@ import { ITask } from '../entities/task';
 })
 export class AddTaskComponent implements OnInit {
 
-  task: ITask = {
-    name: '',
-    description: '',
-    assignee_id: '',
-    status: 'to do',
-    priority: 'low',
-    start_date: new Date(),
-    due_date: new Date(),
-    
-    id: '',
+  project_id: string;
+  name: string;
+  description: string;
+  assignee_id: string;
+  status: string;
+  priority: string;
+  start_date: string;
+  due_date: string;
+  errorMessage: string;
 
-  };
+  constructor(private taskService: TaskService, private router: Router) {}
 
-  tasks: ITask[] = [];
+  ngOnInit() {}
 
-  constructor(private taskService: TaskService) { }
-
-  ngOnInit() {
-    this.getTasks();
-  }
-
-  onSubmit(form: NgForm) {
-    if (form.valid) {
-      this.taskService.createtask(this.task).subscribe(
-        response => {
-          this.tasks.push(response);
-          
-        },
-        error => {
-          console.error('lỗi mẹ nó rồi ', error);
-        }
-      );
-    }
-  }
-
-  getTasks() {
-    this.taskService.getAlltasks().subscribe(
-      tasks => {
-        this.tasks = tasks;
+  createtask() {
+    this.taskService.createtask({
+      project_id: this.project_id,
+      name: this.name,
+      description: this.description,
+      assignee_id: this.assignee_id,
+      status: this.status,
+      priority: this.priority,
+      start_date: this.start_date,  // Or new Date().toISOString(),
+      due_date: this.due_date       // Or new Date().toISOString()
+    }).subscribe(
+      res => {
+        this.router.navigate(['/task']); // Navigate to the tasks page upon successful task creation
       },
-      error => {
-        console.error('Error fetching tasks', error);
+      err => {
+        this.errorMessage = 'Cannot create task, please try again'; // Error message
+        console.error('Error:', err);
       }
     );
   }
