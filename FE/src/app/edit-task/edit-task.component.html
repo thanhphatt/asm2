@@ -1,0 +1,40 @@
+<!-- edit-task.component.html -->
+<div *ngIf="task" class="edit-task-form">
+  <h2>Edit Task</h2>
+  <form (submit)="saveTask()">
+    <div class="form-group">
+      <label for="project_id">Project ID</label>
+      <input type="text" class="form-control" id="project_id" [(ngModel)]="task.project_id" name="project_id">
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="task.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" [(ngModel)]="task.description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="assignee_id">Assignee ID</label>
+      <input type="text" class="form-control" id="assignee_id" [(ngModel)]="task.assignee_id" name="assignee_id">
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" id="status" [(ngModel)]="task.status" name="status">
+    </div>
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <input type="text" class="form-control" id="priority" [(ngModel)]="task.priority" name="priority">
+    </div>
+    <div class="form-group">
+      <label for="start_date">Start Date</label>
+      <input type="date" class="form-control" id="start_date" [(ngModel)]="task.start_date" name="start_date">
+    </div>
+    <div class="form-group">
+      <label for="due_date">Due Date</label>
+      <input type="date" class="form-control" id="due_date" [(ngModel)]="task.due_date" name="due_date">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-default" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>

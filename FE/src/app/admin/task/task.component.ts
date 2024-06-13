@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TaskComponent implements OnInit {
   tasks: ITask[] = [];
-
+  selectedTask: ITask | null = null;
   constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class TaskComponent implements OnInit {
   }
 
   getAlltasks() {
-    this.taskService.getAlltasks().subscribe(
+    this.taskService.getAllTasks().subscribe(
       data => {
         console.log('Data received:', data); // Debugging line
         this.tasks = data;
@@ -26,8 +26,11 @@ export class TaskComponent implements OnInit {
       error => console.error('Lỗi khi lấy bài viết:', error)
     );
   }
+  // editTask(task: ITask) {
+  //   this.router.navigate(['/task', id]); // Tạo một bản sao của task để chỉnh sửa
+  // }
   deleteTask(taskId: string) {
-    this.taskService.deletetask(taskId).subscribe(
+    this.taskService.deleteTask(taskId).subscribe(
       () => {
         console.log('Task deleted successfully');
         // Load lại trang sau khi xoá thành công

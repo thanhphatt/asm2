@@ -20,7 +20,9 @@ import { UsersService } from './admin/services/user.service';
 import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { UsersComponent } from './admin/users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+
 import { AddUserComponent } from './add-user/add-user.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     ProjectDetailsComponent,
     UsersComponent,
     UserDetailComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditTaskComponent
     
    
   ],

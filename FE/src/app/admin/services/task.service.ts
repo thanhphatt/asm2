@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
 
-import { ITask } from '../entities/task'
+import { ITask } from '../entities/task';
 
 @Injectable()
 export class TaskService {
@@ -14,7 +14,7 @@ export class TaskService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getAlltasks(): Observable<ITask[]> {
+  getAllTasks(): Observable<ITask[]> {
     return this.http.get<ITask[]>(this.url)
       .map(response => response as ITask[])
       .catch(this.handleError);
@@ -28,18 +28,17 @@ export class TaskService {
       .catch(this.handleError);
   }
 
-  
-  deletetask(id: string): Observable<void> {
+  deleteTask(id: string): Observable<void> {
     console.log(`Xóa task với ID: ${id}`); 
     return this.http.delete<void>(`${this.url}/${id}`)
       .catch(this.handleError);
   }
 
-  createtask(post:any): Observable<any> {
+  createTask(post: any): Observable<any> {
     return this.http.post(`${this.url}`, post);
   }
 
-  updatetask(task: ITask): Observable<ITask> {
+  updateTask(task: ITask): Observable<ITask> {
     if (task._id) {
       const taskId = task._id;
       return this.http.put<ITask>(`${this.url}/${taskId}`, task)
