@@ -35,7 +35,7 @@ export class AddUserComponent implements OnInit {
   onSubmit() {
     if (this.addUserForm.valid) {
       console.log('Form Value:', this.addUserForm.value); // In ra giá trị form
-      this.userService.createuser(this.addUserForm.value).subscribe(
+      this.userService.createUser(this.addUserForm.value).subscribe(
         response => {
           this.router.navigate(['/user']);
         },

@@ -18,7 +18,7 @@ export class UsersComponent implements OnInit {
   }
 
   getAllusers() {
-    this.userService.getAllusers().subscribe(
+    this.userService.getAllUsers().subscribe(
       data => {
         console.log('Data received:', data); // Debugging line
         this.users = data;
@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/user', id]);
   }
   deleteUser(id: string) {
-    this.userService.deleteuser(id).subscribe(
+    this.userService.deleteUser(id).subscribe(
       response => {
         console.log('User deleted:', response); // Debugging line
         // Cập nhật danh sách người dùng sau khi xóa
