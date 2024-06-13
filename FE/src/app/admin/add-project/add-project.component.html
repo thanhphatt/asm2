@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Project</title>
-    <style>
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        input[type="text"], textarea, input[type="date"] {
-            width: calc(100% - 22px);
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #000;
-            border-radius: 3px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Project</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Add Project</h2>
-        <form>
-            <table>
-                <tr>
-                    <td><label for="projectName">Project Name:</label></td>
-                    <td><input type="text" id="projectName" name="projectName" required></td>
-                </tr>
-                <tr>
-                    <td><label for="projectDescription">Description:</label></td>
-                    <td><textarea id="projectDescription" name="projectDescription" rows="4" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="startDate">Start Date:</label></td>
-                    <td><input type="date" id="startDate" name="startDate" required></td>
-                </tr>
-                <tr>
-                    <td><label for="endDate">End Date:</label></td>
-                    <td><input type="date" id="endDate" name="endDate" required></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Add Project"></td>
-                </tr>
-            </table>
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div id="page-inner">
+        <div class="col-md-12">
+          <h1>Thêm Dự Án</h1>
+        </div>
+        <form (ngSubmit)="createproject()" #projectForm="ngForm">
+          <div class="form-group">
+            <label for="name">Tên</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" required>
+            <div *ngIf="projectForm.controls.name?.invalid && (projectForm.controls.name?.dirty || projectForm.controls.name?.touched)" class="alert alert-danger">Tên là bắt buộc</div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Mô tả</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description" required>
+            <div *ngIf="projectForm.controls.description?.invalid && (projectForm.controls.description?.dirty || projectForm.controls.description?.touched)" class="alert alert-danger">Mô tả là bắt buộc</div>
+          </div>
+
+          <div class="form-group">
+            <label for="leader_id">Leader ID</label>
+            <input type="text" class="form-control" id="leader_id" [(ngModel)]="leader_id" name="leader_id" required>
+            <div *ngIf="projectForm.controls.leader_id?.invalid && (projectForm.controls.leader_id?.dirty || projectForm.controls.leader_id?.touched)" class="alert alert-danger">Leader ID là bắt buộc</div>
+          </div>
+
+          <div class="form-group">
+            <label for="start_date">Ngày Bắt đầu</label>
+            <input type="date" class="form-control" id="start_date" [(ngModel)]="start_date" name="start_date" required>
+            <div *ngIf="projectForm.controls.start_date?.invalid && (projectForm.controls.start_date?.dirty || projectForm.controls.start_date?.touched)" class="alert alert-danger">Ngày Bắt đầu là bắt buộc</div>
+          </div>
+
+          <div class="form-group">
+            <label for="end_date">Ngày Kết thúc</label>
+            <input type="date" class="form-control" id="end_date" [(ngModel)]="end_date" name="end_date" required>
+            <div *ngIf="projectForm.controls.end_date?.invalid && (projectForm.controls.end_date?.dirty || projectForm.controls.end_date?.touched)" class="alert alert-danger">Ngày Kết thúc là bắt buộc</div>
+          </div>
+
+          <div class="form-group">
+            <label for="team">Thành viên Nhóm</label>
+            <input type="text" class="form-control" id="team" [(ngModel)]="team" name="team" required>
+            <div *ngIf="projectForm.controls.team?.invalid && (projectForm.controls.team?.dirty || projectForm.controls.team?.touched)" class="alert alert-danger">Thành viên Nhóm là bắt buộc</div>
+          </div>
+          <div class="form-group">
+            <label for="budget">Ngân sách</label>
+            <input type="text" class="form-control" id="budget" [(ngModel)]="budget" name="budget" required>
+            <div *ngIf="projectForm.controls.budget?.invalid && (projectForm.controls.budget?.dirty || projectForm.controls.budget?.touched)" class="alert alert-danger">Ngân sách là bắt buộc</div>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Trạng thái</label>
+            <select class="form-control" id="status" [(ngModel)]="status" name="status" required>
+              <option value="ongoing">đang làm </option>
+              <option value="completed">chờ xác nhận</option>
+              <option value="pending">đang viết</option>
+             
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Thêm mới</button>
         </form>
+
+        <hr />
+
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+      </div>
     </div>
+  </div>
 </body>
 </html>
