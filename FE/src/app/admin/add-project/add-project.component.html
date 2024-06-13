@@ -48,7 +48,6 @@
             <input type="text" class="form-control" id="team" [(ngModel)]="team" name="team" required>
             <div *ngIf="projectForm.controls.team?.invalid && (projectForm.controls.team?.dirty || projectForm.controls.team?.touched)" class="alert alert-danger">Thành viên Nhóm là bắt buộc</div>
           </div>
-
           <div class="form-group">
             <label for="budget">Ngân sách</label>
             <input type="text" class="form-control" id="budget" [(ngModel)]="budget" name="budget" required>

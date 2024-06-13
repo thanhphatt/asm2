@@ -21,7 +21,7 @@ import { ProjectDetailsComponent } from './project-detail/project-detail.compone
 import { UsersComponent } from './admin/users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
-
+import { ReactiveFormsModule } from '@angular/forms'; // Thêm dòng này
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     ProjectDetailsComponent,
     UsersComponent,
     UserDetailComponent,
-    AddUserComponent
+    AddUserComponent,
+
     
    
   ],
@@ -46,7 +47,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule ,// Add FormsModule here
-    HttpClientModule  // Nhập khẩu HttpClientModule ở đây
+    HttpClientModule,
+    ReactiveFormsModule  // Nhập khẩu HttpClientModule ở đây
   ],
   providers: [ProjectService,TaskService,UsersService],
   bootstrap: [AppComponent]
