@@ -41,14 +41,11 @@
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Leader ID</th>
-                                               
                                                 <th>Due Date</th>
                                                 <th>kết thúc</th>
                                                 <th>Status</th>
                                                 <th>Created At</th>
-                                              
                                                 <th></th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -60,17 +57,16 @@
                                                 <td>{{ task.assignee_id }}</td>
                                                 <td>{{ task.start_date }}</td>
                                                 <td>{{ task.due_date }}</td>
-                                                
                                                 <td>{{ task.status }}</td>
-
-                                               <td>{{ task.priority }}</td>
+                                                <td>{{ task.priority }}</td>
                                                 <td>
                                                     <button class="btn btn-danger" (click)="deleteTask(task._id)">Xoá</button>
-                                                    <button class="btn btn-primary" routerLink="">Sửa</button>
+                                                    <button class="btn btn-primary" (click)="editTask(task._id)">Sửa</button>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    
                                 </div>
                             </div>
                         </div>

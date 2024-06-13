@@ -26,9 +26,16 @@ export class TaskComponent implements OnInit {
       error => console.error('Lỗi khi lấy bài viết:', error)
     );
   }
-  // editTask(task: ITask) {
-  //   this.router.navigate(['/task', id]); // Tạo một bản sao của task để chỉnh sửa
-  // }
+  editTask(task: ITask) {
+    this.taskService.getTaskById(task._id).subscribe(
+      (fetchedTask: ITask) => {
+        this.selectedTask = fetchedTask;
+        this.router.navigate(['/edit-task']);
+        // Có thể thực hiện các hành động khác khi lấy task thành công như hiển thị form chỉnh sửa
+      },
+      error => console.error('Lỗi khi lấy task:', error)
+    );
+  }
   deleteTask(taskId: string) {
     this.taskService.deleteTask(taskId).subscribe(
       () => {
