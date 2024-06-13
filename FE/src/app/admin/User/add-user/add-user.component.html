@@ -45,26 +45,23 @@
                           placeholder="Username"
                           formControlName="username"
                         />
-                        <div *ngIf="addUserForm.get('username').errors?.required && addUserForm.get('username').touched" class="text-danger">
+                        <div
+                          *ngIf="
+                            addUserForm.get('username').errors?.required &&
+                            addUserForm.get('username').touched
+                          "
+                          class="text-danger"
+                        >
                           <h5>Username không được bỏ trống !</h5>
                         </div>
-                      </div>
-                      <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="password"
-                          >Password</label
+                        <div
+                          *ngIf="
+                            addUserForm.get('username').errors?.minlength &&
+                            addUserForm.get('username').touched
+                          "
+                          class="text-danger"
                         >
-                        <input
-                          type="password"
-                          id="password"
-                          class="form-control"
-                          placeholder="Password"
-                          formControlName="password"
-                        />
-                        <div *ngIf="addUserForm.get('password').errors?.required && addUserForm.get('password').touched" class="text-danger">
-                          <h5>Password không được bỏ trống !</h5>
-                        </div>
-                        <div *ngIf="addUserForm.get('password').errors?.minlength && addUserForm.get('password').dirty" class="text-danger">
-                          <h5>Password phải có ít nhất 6 ký tự !</h5>
+                          <h5>Username phải trên 2 ký tự !</h5>
                         </div>
                       </div>
                       <div data-mdb-input-init class="form-outline mb-4">
@@ -76,10 +73,22 @@
                           placeholder="Email"
                           formControlName="email"
                         />
-                        <div *ngIf="addUserForm.get('email').errors?.required && addUserForm.get('email').touched" class="text-danger">
+                        <div
+                          *ngIf="
+                            addUserForm.get('email').errors?.required &&
+                            addUserForm.get('email').touched
+                          "
+                          class="text-danger"
+                        >
                           <h5>Email không được bỏ trống !</h5>
                         </div>
-                        <div *ngIf="addUserForm.get('email').errors?.email && addUserForm.get('email').touched" class="text-danger">
+                        <div
+                          *ngIf="
+                            addUserForm.get('email').errors?.email &&
+                            addUserForm.get('email').touched
+                          "
+                          class="text-danger"
+                        >
                           <h5>Email không hợp lệ !</h5>
                         </div>
                       </div>
@@ -94,7 +103,13 @@
                               placeholder="Role"
                               formControlName="role"
                             />
-                            <div *ngIf="addUserForm.get('role').errors?.required && addUserForm.get('role').touched" class="text-danger">
+                            <div
+                              *ngIf="
+                                addUserForm.get('role').errors?.required &&
+                                addUserForm.get('role').touched
+                              "
+                              class="text-danger"
+                            >
                               <h5>Role không được bỏ trống !</h5>
                             </div>
                           </div>
@@ -109,23 +124,14 @@
                               placeholder="Team"
                               formControlName="team"
                             />
-                            <div *ngIf="addUserForm.get('team').errors?.required && addUserForm.get('team').touched" class="text-danger">
-                              <h5>Role không được bỏ trống !</h5>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div data-mdb-input-init class="form-outline">
-                            <label class="form-label" for="image">Image</label>
-                            <input
-                              type="file"
-                              id="image"
-                              class="form-control"
-                              placeholder="Image"
-                              formControlName="image"
-                            />
-                            <div *ngIf="addUserForm.get('image').errors?.required && addUserForm.get('image').touched" class="text-danger">
-                              <h5>Role không được bỏ trống !</h5>
+                            <div
+                              *ngIf="
+                                addUserForm.get('team').errors?.required &&
+                                addUserForm.get('team').touched
+                              "
+                              class="text-danger"
+                            >
+                              <h5>Team không được bỏ trống !</h5>
                             </div>
                           </div>
                         </div>
@@ -140,7 +146,14 @@
                               class="form-control"
                               formControlName="created_at"
                             />
-                            <div *ngIf="addUserForm.get('created_at').errors?.required && addUserForm.get('created_at').touched" class="text-danger">
+                            <div
+                              *ngIf="
+                                addUserForm.get('created_at').errors
+                                  ?.required &&
+                                addUserForm.get('created_at').touched
+                              "
+                              class="text-danger"
+                            >
                               <h5>Create At không được bỏ trống !</h5>
                             </div>
                           </div>

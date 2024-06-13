@@ -22,12 +22,10 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit() {
     this.addUserForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      username: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
       team: [''],
-      image: [''],
       created_at: ['', Validators.required]
     });
   }
@@ -45,18 +43,16 @@ export class AddUserComponent implements OnInit {
         }
       );
     } else {
-      this.errorMessage = 'Vui lòng điền đầy đủ thông tin !'
+      this.errorMessage = 'Vui lòng điền đầy đủ thông tin!';
     } 
-
   }
-  
+
   onBack(): void {
     this.location.back();
   }
 
   // Helper method to get the control
   get username() { return this.addUserForm.get('username'); }
-  get password() { return this.addUserForm.get('password'); }
   get email() { return this.addUserForm.get('email'); }
   get role() { return this.addUserForm.get('role'); }
   get created_at() { return this.addUserForm.get('created_at'); }

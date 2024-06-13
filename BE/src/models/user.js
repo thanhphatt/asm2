@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Schema cho Users
+// Schema for Users
 const userSchema = new Schema({
   
     username: { type: String, required: true },
-    password: { type: String, required: true },
+    // password: { type: String, required: true },
     email: { type: String, required: true },
     image: { type: String, required: false },
-    role: { type: String, enum: ['leader', 'employee'], required: true },
+    role: { type: String, enum: ['admin', 'user'], required: true }, // Include 'user' in enum
     team: { type: String, required: true },
-    // created_at: { type: Date, default: Date.now },
+    created_at: { type: Date, default: Date.now },
     // updated_at: { type: Date, default: Date.now }
-  });
+});
 
 module.exports = mongoose.model('User', userSchema);

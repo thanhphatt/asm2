@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersService {
-  private url = 'http://localhost:4000/api/users';
+  private url = 'http://localhost:4000/api/user';
 
   constructor(private http: HttpClient) { }
 
@@ -56,5 +56,6 @@ export class UsersService {
     return Observable.throw(errorMessage);
   }
 }
+
 
 export { IUsers };

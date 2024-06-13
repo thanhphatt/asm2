@@ -25,7 +25,7 @@ export class UserDetailComponent implements OnInit {
       data => {
         this.user = data;
       },
-      error => console.error('Lỗi khi lấy chi tiết dự án:', error)
+      error => console.error('Lỗi khi lấy chi tiết:', error)
     );
   }
   onBack(): void {
