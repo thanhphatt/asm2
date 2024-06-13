@@ -37,25 +37,32 @@
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
+                                                <th></th>
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Leader ID</th>
                                                 <th>Due Date</th>
+                                                <th>kết thúc</th>
                                                 <th>Status</th>
                                                 <th>Created At</th>
-                                                <th>Updated At</th>
+                                              <th></th>
+                                                <th></th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let task of tasks; let i = index">
                                                 <td>{{ i + 1 }}</td>
+                                                <td>{{ task.project_id }}</td>
                                                 <td>{{ task.name }}</td>
                                                 <td>{{ task.description }}</td>
                                                 <td>{{ task.assignee_id }}</td>
+                                                <td>{{ task.start_date }}</td>
                                                 <td>{{ task.due_date }}</td>
+                                                
                                                 <td>{{ task.status }}</td>
-                                                <td>{{ task.created_at }}</td>
-                                                <td>{{ task.updated_at }}</td>
+
+                                               <td>{{ task.priority }}</td>
                                                 <td>
                                                     <button class="btn btn-danger" (click)="deleteTask(task._id)">Xoá</button>
                                                 </td>
