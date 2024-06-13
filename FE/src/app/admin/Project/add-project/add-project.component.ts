@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProjectService } from '../services/project.service';
+
+import { ProjectService } from '../../services/project.service';
 import { IProject } from '../entities/project'; // Đảm bảo đường dẫn đúng
 
 @Component({

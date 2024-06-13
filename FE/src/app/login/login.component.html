@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Information</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
 <body>
-  
-
-<div class="container">
-  <h2 class="text-center">login</h2>
-  <form (ngSubmit)="onSubmit()" class="mx-auto" >
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" class="form-control" [(ngModel)]="username" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary  btn-sm" style="background-color: #4CAF50; border-color: #4CAF50;">Login</button> <!-- Sử dụng màu sắc phù hợp -->
-  </form>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+   <div class="center">
+      <input type="checkbox" id="show">
+      <label for="show" class="show-btn">View Form</label>
+      <div class="container">
+         <label for="show" class="close-btn fas fa-times" title="close"></label>
+         <div class="text">
+            Login Form
+         </div>
+         <form action="#">
+            <div class="data">
+               <label>Email or Phone</label>
+               <input type="text" required>
+            </div>
+            <div class="data">
+               <label>Password</label>
+               <input type="password" required>
+            </div>
+            <div class="forgot-pass">
+               <a href="#">Forgot Password?</a>
+            </div>
+            <div class="btn">
+               <div class="inner"></div>
+               <button type="submit">login</button>
+            </div>
+            <div class="signup-link">
+               Not a member? <a href="/add-user">Signup now</a>
+            </div>
+         </form>
+      </div>
+   </div>
+ </body>

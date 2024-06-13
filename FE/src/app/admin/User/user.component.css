@@ -1,0 +1,88 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  #page-wrapper {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+
+  .table-responsive {
+    margin-bottom: 15px;
+  }
+
+  .table {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .table thead {
+    background-color: #34495e;
+    color: #ffffff;
+  }
+
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .table tbody tr:hover {
+    background-color: #e3e3e3;
+  }
+
+  .btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+  }
+
+  .btn-danger {
+    background-color: #e74c3c;
+    border: none;
+    color: #ffffff;
+  }
+
+  .btn-primary:hover,
+  .btn-danger:hover {
+    opacity: 0.8;
+  }
+  .btn1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color:  #16a085;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn1:hover {
+    background-color: #34495e;
+    transform: translateY(-1px);
+  }
+
+  .btn1 i {
+    margin-right: 5px;
+  }
+  .text-right {
+    text-align: right;
+  }

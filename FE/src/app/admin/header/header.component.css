@@ -3,19 +3,20 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  
 }
 
 .navbar-default {
-  background-color: #34495e;
-  border-color: #2c3e50;
+  background-color: #2c3e50;
+  border-color: #1a242f;
 }
 
 .navbar-brand {
   font-family: 'Arial', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   color: #ffffff !important;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 15px;
 }
 
 .navbar-brand:hover {
@@ -24,26 +25,26 @@ body {
 
 .square-btn-adjust {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 18px;
-  padding: 12px 24px;
-  border-radius: 8px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 6px;
   background-color: #e74c3c;
   color: #ffffff;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .square-btn-adjust:hover {
   background-color: #c0392b;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
 
 .square-btn-adjust:active {
   background-color: #a93226;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
 }
 
@@ -75,15 +76,15 @@ body {
 .sidebar-collapse ul li a {
   display: block;
   color: #ecf0f1;
-  padding: 15px 0;
+  padding: 12px 0;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   border-bottom: 1px solid #34495e;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar-collapse ul li a:hover {
-  background-color: #1abc9c;
+  background-color: #16a085;
   color: #ffffff;
 }
 
@@ -95,15 +96,15 @@ body {
 }
 
 .sidebar-collapse ul li ul li a {
-  font-size: 16px;
-  padding: 10px 30px;
+  font-size: 14px;
+  padding: 8px 30px;
   background-color: #34495e;
   border-bottom: 1px solid #2c3e50;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar-collapse ul li ul li a:hover {
-  background-color: #1abc9c;
+  background-color: #16a085;
   color: #ffffff;
 }
 
@@ -111,12 +112,55 @@ body {
   padding: 10px;
   margin-top: auto;
   border-radius: 50%;
-  border: 3px solid #1abc9c;
+  border: 3px solid #16a085;
 }
 
 .fa-3x {
   margin-right: 10px;
 }
+
 img.user-image.img-responsive {
   margin-top: 190px;
+  border-radius: 50%;
+  border: 3px solid #16a085;
+}
+
+/* New styles for the table and buttons */
+.table {
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #34495e;
+  color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-primary {
+  background-color: #16a085;
+  border-color: #138d75;
+}
+
+.btn-primary:hover {
+  background-color: #138d75;
+  border-color: #117a65;
+}
+
+.panel {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel-heading {
+  background-color: #34495e;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
 }
