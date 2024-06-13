@@ -32,11 +32,11 @@
                     alt="Sample photo"
                   />
                   <div class="card-body p-4 p-md-5">
-                    <h3 class="title">Registration Info</h3>
+                    <h3 class="title">THÊM NHÂN VIÊN</h3>
                     <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
                       <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="username"
-                          >Username</label
+                          >nhập: Username</label
                         >
                         <input
                           type="text"
@@ -95,7 +95,7 @@
                       <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                         <div class="col-md-6">
                           <div data-mdb-input-init class="form-outline">
-                            <label class="form-label" for="role">Role</label>
+                            <label class="form-label" for="role">vai trò</label>
                             <input
                               type="text"
                               id="role"
@@ -138,7 +138,7 @@
                         <div class="col-md-6">
                           <div data-mdb-input-init class="form-outline">
                             <label class="form-label" for="created_at"
-                              >Create At</label
+                              >tạo vào lúc</label
                             >
                             <input
                               type="date"
@@ -154,7 +154,7 @@
                               "
                               class="text-danger"
                             >
-                              <h5>Create At không được bỏ trống !</h5>
+                              <h5> không được bỏ trống !</h5>
                             </div>
                           </div>
                         </div>
@@ -166,7 +166,7 @@
                           data-mdb-ripple-init
                           class="btn1"
                         >
-                          Submit
+                          TẠO
                         </button>
                         <button type="button" (click)="onBack()" class="btn">
                           <i class="fa fa-arrow-left"></i> Quay lại
