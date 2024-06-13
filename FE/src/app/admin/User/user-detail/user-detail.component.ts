@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IUsers } from '../admin/entities/user';// Đảm bảo đường dẫn đúng
+import { IUsers } from '../../entities/user';// Đảm bảo đường dẫn đúng
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { UsersService } from '../admin/services/user.service';
+import { UsersService } from '../../services/user.service';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -31,5 +31,4 @@ export class UserDetailComponent implements OnInit {
   onBack(): void {
     this.location.back();
   }
-
 }

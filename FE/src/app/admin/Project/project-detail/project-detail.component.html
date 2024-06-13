@@ -23,15 +23,15 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Chi tiết nhân viên:</h2>
+
                     </div>
                 </div>
                 <hr />
-                <div class="row" *ngIf="user">
+                <div class="row" *ngIf="project">
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <h4 class="panel-heading text-white" style="background-color: #4D4D4D;">Tên dự án:
-                                {{ user.name | uppercase }}
+                                {{ project.name | uppercase }}
                             </h4>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -39,39 +39,45 @@
                                        
                                         <tbody>
                                             <tr>
-                                                <td><h4>Mã nhân viên</h4></td>
-                                                <td>{{ user._id}}</td>
+                                                <td><h4>Mã dự án</h4></td>
+                                                <td>{{ project._id}}</td>
                                             </tr>
                                             <tr>
-                                                <td><h4>tên nhân vật</h4></td>
-                                                <td>{{ user.username }}</td>
+                                                <td><h4>Mô tả</h4></td>
+                                                <td>{{ project.description }}</td>
                                             </tr>
                                             <tr>
-                                                <td><h4>email</h4></td>
-                                                <td>{{ user.email }}</td>
+                                                <td><h4>Ngày bắt đầu</h4></td>
+                                                <td>{{ project.start_date }}</td>
                                             </tr>
-                                            <tr >
-                                                <td><h4>mật khẩu</h4></td>
-                                                <td>{{ user.password }}</td>
+                                            <tr *ngIf="project && project.end_date">
+                                                <td><h4>Ngày kết thúc</h4></td>
+                                                <td>{{ project.end_date }}</td>
                                             </tr>
                                             
                                             <tr>
                                                 <td><h4>Nhóm thực hiện</h4></td>
-                                                <td>{{ user.team }}</td>
+                                                <td>{{ project.team }}</td>
                                             </tr>
                                             <tr>
                                                 <td><h4>Trạng thái</h4></td>
-                                                <td>{{ user.role }}</td>
+                                                <td>{{ project.status }}</td>
                                             </tr>
-                                           
-                                            
+                                            <tr>
+                                                <td><h4>Ngân sách</h4></td>
+                                                <td>{{ project.budget }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><h4>Người dẫn dắt</h4></td>
+                                                <td>{{ project.leader_id }}</td>
+                                            </tr>
                                             <tr>
                                                 <td><h4>Ngày tạo</h4></td>
-                                                <td>{{ user.created_at }}</td>
+                                                <td>{{ project.created_at }}</td>
                                             </tr>
                                             <tr>
                                                 <td><h4>Ngày cập nhật</h4></td>
-                                                <td>{{ user.updated_at }}</td>
+                                                <td>{{ project.updated_at }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -86,7 +92,7 @@
             </div>
         </div>
     </div>
-  
+
  <script src="../../assets/admin/js/jquery-1.10.2.js"></script>
  <!-- BOOTSTRAP SCRIPTS -->
  <script src="../../assets/admin/js/bootstrap.min.js"></script>

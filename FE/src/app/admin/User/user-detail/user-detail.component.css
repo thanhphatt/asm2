@@ -1,0 +1,42 @@
+
+body, html {
+  height: 100%;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.rounded-circle {
+  border: 3px solid #fff;
+}
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+.btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.icon-inline {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.mb{
+  color: #16a085 ;
+  font-size: 1em;
+  
+}
