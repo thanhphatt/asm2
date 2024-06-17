@@ -1,6 +1,7 @@
 export interface IProject {
     
     _id?: { $oid: string };
+    // id: string
     name: string;
     description: string;
     leader_id: string;

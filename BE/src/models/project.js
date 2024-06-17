@@ -11,8 +11,8 @@ const projectSchema = new Schema({
     end_date: { type: Date, required: true },
     budget: { type: Number, required: true },
     status: { type: String, enum: ['ongoing', 'completed', 'pending'], required: true },
-    // created_at: { type: Date, default: Date.now },
-    // updated_at: { type: Date, default: Date.now }
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date, default: Date.now }
   });
   
 module.exports = mongoose.model('Project', projectSchema);

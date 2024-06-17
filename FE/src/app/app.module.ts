@@ -18,7 +18,13 @@ import { HttpClientModule } from '@angular/common/http';  // Nhập HttpClientMo
 import { ProjectService } from './admin/services/project.service';
 import { TaskService } from './admin/services/task.service';
 import { UsersService } from './admin/services/user.service';
+// import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { ProjectDetailsComponent } from './admin/project/project-detail/project-detail.component';
+// import { UsersComponent } from './admin/users/users.component';
+// import { UserDetailComponent } from './user-detail/user-detail.component';
+// import { AddUserComponent } from './add-user/add-user.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 import { UsersComponent } from './admin/User/user.component';
 import { UserDetailComponent } from './admin/User/user-detail/user-detail.component';
@@ -43,8 +49,11 @@ import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
     AddUserComponent,
     // Updatedupstream,
     UserDetailComponent,
-
-
+    AddUserComponent,
+    EditTaskComponent,
+    EditProjectComponent,
+    EditUserComponent
+   
   ],
   imports: [
     BrowserModule,
