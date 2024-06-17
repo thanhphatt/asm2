@@ -23,6 +23,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
+// import{tá}
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     UsersComponent,
     UserDetailComponent,
     AddUserComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    EditProjectComponent
     
    
   ],

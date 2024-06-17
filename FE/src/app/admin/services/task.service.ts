@@ -5,7 +5,6 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
-
 import { ITask } from '../entities/task';
 
 @Injectable()
@@ -20,12 +19,12 @@ export class TaskService {
       .catch(this.handleError);
   }
 
-  getTaskById(id: string): Observable<ITask> {
+  getTaskById(id: string): Observable<any> {
     if (!id) {
       return Observable.throw('ID không hợp lệ');
     }
-    return this.http.get<ITask>(`${this.url}/${id}`)
-      .catch(this.handleError);
+    return this.http.get<any>(`${this.url}/${id}`)
+    .catch(this.handleError);
   }
 
   deleteTask(id: string): Observable<void> {
@@ -37,17 +36,14 @@ export class TaskService {
   createTask(post: any): Observable<any> {
     return this.http.post(`${this.url}`, post);
   }
-
-  updateTask(task: ITask): Observable<ITask> {
-    if (task._id) {
-      const taskId = task._id;
-      return this.http.put<ITask>(`${this.url}/${taskId}`, task)
-        .catch(this.handleError);
-    } else {
-      console.error('ID task không hợp lệ!');
-      return Observable.throw('ID task không hợp lệ!');
-    }
+  
+  updateTask(id: string, task: ITask): Observable<ITask> {
+    return this.http.put<ITask>(`${this.url}/${id}`, task);
   }
+
+
+
+  
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';

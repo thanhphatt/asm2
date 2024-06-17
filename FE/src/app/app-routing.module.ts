@@ -14,6 +14,7 @@ import { UsersComponent } from './admin/users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,7 +30,9 @@ const routes: Routes = [
   { path: 'project/:id', component: ProjectDetailsComponent },
   { path: 'user', component: UsersComponent  },
   { path: 'user/:id', component: UserDetailComponent },
-  { path: 'edit-task', component: EditTaskComponent },
+  { path: 'tasks/:id', component: EditTaskComponent },
+  { path: 'projects/:id', component: EditProjectComponent },
+
 ];
 
 @NgModule({

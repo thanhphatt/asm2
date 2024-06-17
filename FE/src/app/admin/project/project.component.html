@@ -67,6 +67,7 @@
                                                     <td>{{ project.created_at }}</td>
                                                     <td>{{ project.updated_at }}</td>
                                                     <td>
+                                                        <button class="btn btn-primary" [routerLink]="['/projects', project._id]">Sửa</button>
                                                         <a [routerLink]="['/project', project._id]">Chi tiết</a>
                                                         <button class="btn btn-danger" (click)="deleteProject(project._id)">Xóa</button>
                                                     </td> 
