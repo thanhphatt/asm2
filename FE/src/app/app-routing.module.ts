@@ -9,7 +9,8 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { TaskComponent } from './admin/task/list-task/task.component';
 import { projectsComponent } from './admin/project/list-project/project.component';
 
-import { AddTaskComponent } from './admin/add-task/add-task.component';
+// import { AddTaskComponent } from './admin/add-task/add-task.component';
+import { AddTaskComponent } from './admin/task/add-task/add-task.component';
 // import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { AddProjectComponent } from './admin/project/add-project/add-project.component';
 // import { ProjectDetailsComponent } from './project-detail/project-detail.component';

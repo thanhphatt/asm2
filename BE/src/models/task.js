@@ -10,8 +10,8 @@ const taskSchema = new Schema({
     priority: { type: String, enum: ['low', 'medium', 'high'], required: true },
     start_date: { type: Date, required: true },
     due_date: { type: Date, required: true },
-    created_at: { type: Date, default: Date.now },
-    updated_at: { type: Date, default: Date.now }
+    // created_at: { type: Date, default: Date.now },
+    // updated_at: { type: Date, default: Date.now }
   });
 
 module.exports = mongoose.model('Task', taskSchema);

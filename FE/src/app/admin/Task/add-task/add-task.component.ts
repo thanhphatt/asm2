@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// import { TaskService } from '../services/task.service';
 import { TaskService } from '../../services/task.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class AddTaskComponent implements OnInit {
   ngOnInit() {}
 
   createtask() {
-    this.taskService.createtask({
+    this.taskService.createTask({
       project_id: this.project_id,
       name: this.name,
       description: this.description,
@@ -43,5 +44,4 @@ export class AddTaskComponent implements OnInit {
       }
     );
   }
-
 }

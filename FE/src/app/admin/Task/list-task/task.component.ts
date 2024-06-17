@@ -18,7 +18,7 @@ export class TaskComponent implements OnInit {
   }
 
   getAlltasks() {
-    this.taskService.getAlltasks().subscribe(
+    this.taskService.getAllTasks().subscribe(
       data => {
         console.log('Data received:', data); // Debugging line
         this.tasks = data;
@@ -27,7 +27,7 @@ export class TaskComponent implements OnInit {
     );
   }
   deleteTask(taskId: string) {
-    this.taskService.deletetask(taskId).subscribe(
+    this.taskService.deleteTask(taskId).subscribe(
       () => {
         console.log('Task deleted successfully');
         // Load lại trang sau khi xoá thành công

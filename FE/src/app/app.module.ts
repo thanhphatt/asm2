@@ -11,7 +11,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { projectsComponent } from './admin/project/list-project/project.component';
 import { TaskComponent } from './admin/task/list-task/task.component';
 import { LoginComponent } from './login/login.component';
-import { AddTaskComponent } from './admin/task/add-task/add-task.component';
+// import { AddTaskComponent } from './admin/task/add-task/add-task.component';
 
 import { AddProjectComponent } from './admin/project/add-project/add-project.component';
 import { HttpClientModule } from '@angular/common/http';  // Nhập HttpClientModule
@@ -31,6 +31,7 @@ import { UserDetailComponent } from './admin/User/user-detail/user-detail.compon
 import { AddUserComponent } from './admin/User/add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
+import { AddTaskComponent } from './admin/task/add-task/add-task.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
     projectsComponent,
     TaskComponent,
     LoginComponent,
-    AddTaskComponent,
+    // AddTaskComponent,
     AddProjectComponent,
     ProjectDetailsComponent,
     UserDetailComponent,
@@ -52,7 +53,8 @@ import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
     AddUserComponent,
     EditTaskComponent,
     EditProjectComponent,
-    EditUserComponent
+    EditUserComponent,
+    AddTaskComponent
    
   ],
   imports: [

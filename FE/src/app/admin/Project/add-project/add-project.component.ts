@@ -39,7 +39,7 @@ export class AddProjectComponent implements OnInit {
       updated_at: new Date().toISOString()
     };
 
-    this.projectService.createproject(newProject).subscribe(
+    this.projectService.createProject(newProject).subscribe(
       res => {
         this.router.navigate(['/project']); // Navigate to the projects page upon successful project creation
       },

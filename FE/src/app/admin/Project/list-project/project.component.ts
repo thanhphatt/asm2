@@ -18,7 +18,7 @@ export class projectsComponent implements OnInit {
   }
 
   getAllProject() {
-    this.projectService.getAllprojects().subscribe(
+    this.projectService.getAllProjects().subscribe(
       data => {
         console.log('Data received:', data); // Debugging line
         this.projects = data;
@@ -31,7 +31,7 @@ export class projectsComponent implements OnInit {
     this.router.navigate(['/project', id]);
   }
   deleteProject(id: string) {
-    this.projectService.deleteproject(id).subscribe(
+    this.projectService.deleteProject(id).subscribe(
       response => {
         console.log('Project deleted:', response); // Debugging line
         // Tải lại trang hiện tại
