@@ -15,14 +15,17 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
-
+import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
+
   { path: 'home', component: HomeComponent },
   { path: '', component: HeaderComponent },
   { path: 'task', component: TaskComponent },
   { path: 'employee', component: EmployeeComponent },
   { path: 'project', component: projectsComponent },
+  { path: 'register', component: RegisterComponent },
+
   { path: 'login', component: LoginComponent },
   { path: 'add-task', component: AddTaskComponent },
   { path: 'add-project', component: AddProjectComponent },
@@ -38,6 +41,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],

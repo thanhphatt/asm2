@@ -10,7 +10,8 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { EmployeeComponent } from './admin/employee/employee.component';
 import { projectsComponent } from './admin/project/project.component';
 import { TaskComponent } from './admin/task/task.component';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
+
 import { AddTaskComponent } from './admin/add-task/add-task.component';
 import { AddProjectComponent } from './admin/add-project/add-project.component';
 import { HttpClientModule } from '@angular/common/http';  // Nhập HttpClientModule
@@ -20,10 +21,12 @@ import { UsersService } from './admin/services/user.service';
 import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { UsersComponent } from './admin/users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-
+import { LoginComponent } from './login/login.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 // import{tá}
 
 @NgModule({
@@ -44,7 +47,8 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
     UserDetailComponent,
     AddUserComponent,
     EditTaskComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    RegisterComponent
     
    
   ],
@@ -52,7 +56,8 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule ,// Add FormsModule here
-    HttpClientModule  // Nhập khẩu HttpClientModule ở đây
+    HttpClientModule , // Nhập khẩu HttpClientModule ở đây
+    ReactiveFormsModule
   ],
   providers: [ProjectService,TaskService,UsersService],
   bootstrap: [AppComponent]
