@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from '../../services/user.service';
+import { UsersService, IUser } from '../../services/user.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import { IUsers } from '../../services/user.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -15,11 +14,13 @@ export class EditUserComponent implements OnInit {
   errorMessage: string = '';
   isLoading: boolean = true;
   userId: string;
+  user: IUser | null = null; // Initialize user as null or undefined
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService
+    private location: Location,
+    private userService: UsersService
   ) { }
 
   ngOnInit(): void {
@@ -35,8 +36,7 @@ export class EditUserComponent implements OnInit {
     this.userService.getUserById(id).subscribe(
       (data: IUser) => {
         if (data) {
-          this.user = data;
-          console.log('User assigned:', this.user);
+          this.user = data; // Assign fetched user data to userId: string, user: IUsering, user: IUsering, user: IUserconsole.log('User assigned:', this.user);
         } else {
           console.error('API response does not contain user data');
         }
@@ -48,15 +48,20 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUser(): void {
+    if (!this.user) {
+      console.error('User is not properly initialized, cannot update user.');
+      return;
+    }
+
     console.log('Updating user:', this.user);
     
     let userId: string | undefined;
 
-    // Kiểm tra nếu _id là một đối tượng chứa $oid
+    // Check if _id is an object containing $oid
     if (this.user._id && typeof this.user._id === 'object' && '$oid' in this.user._id) {
       userId = this.user._id.$oid;
     } 
-    // Kiểm tra nếu _id là một chuỗi
+    // Check if _id is a string
     else if (typeof this.user._id === 'string') {
       userId = this.user._id;
     }
@@ -72,12 +77,9 @@ export class EditUserComponent implements OnInit {
         }
       );
     } else {
-      console.error('User ID is undefined or user is not properly initialized, cannot update user.');
+      console.error('User ID is undefined, cannot update user.');
     }
   }
-  
 
-  onBack() {
-    this.location.back();
-  }
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../services/user.service';
+import { UsersService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -15,18 +15,16 @@ export class AddUserComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
+    private userService: UsersService,
     private router: Router,
     private location: Location
   ) {}
 
   ngOnInit() {
     this.addUserForm = this.fb.group({
-<<<<<<< Updated upstream
-      username: ['', [Validators.required, Validators.minLength(2)]],
-=======
+
       username: ['', Validators.required],
->>>>>>> Stashed changes
+
       email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
       team: [''],

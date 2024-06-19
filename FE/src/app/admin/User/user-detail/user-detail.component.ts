@@ -3,7 +3,7 @@ import { IUser } from '../../entities/user';// Đảm bảo đường dẫn đú
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 // import { UsersService } from '../../services/user.service';
-import { UserService } from '../../services/user.service';
+import { UsersService } from '../../services/user.service';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -13,7 +13,7 @@ export class UserDetailComponent implements OnInit {
 
   user: IUser;
 
-  constructor(private route: ActivatedRoute, private projectService: UserService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private projectService: UsersService, private location: Location) { }
 
   ngOnInit() {
     // Lấy ID từ thanh địa chỉ (URL)
@@ -26,11 +26,9 @@ export class UserDetailComponent implements OnInit {
       data => {
         this.user = data;
       },
-<<<<<<< Updated upstream
-      error => console.error('Lỗi khi lấy chi tiết:', error)
-=======
+
       error => console.error('Lỗi khi lấy chi tiết người dùng:', error)
->>>>>>> Stashed changes
+
     );
   }
   onBack(): void {

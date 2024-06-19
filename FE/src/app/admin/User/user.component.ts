@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // 
 import { IUser } from '../entities/user';// Đảm bảo đường dẫn đúng
 import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
+import { UsersService } from '../services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
 
   users: IUser[] = [];
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit() {
     this.getAllusers();

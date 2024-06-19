@@ -11,10 +11,7 @@ import { IUser } from '../entities/user';
 export class UsersService {
   private url = 'http://localhost:4000/api/user';
 
-=======
-  
-  private url = 'http://localhost:4000/api/users';
->>>>>>> Stashed changes
+
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<IUser[]> {
@@ -42,7 +39,7 @@ export class UsersService {
       .catch(this.handleError);
   }
 
-  updateUser(user: IUsers): Observable<any> {
+  updateUser(user: IUser): Observable<any> {
     return this.http.put(`${this.url}/${user._id}`, user);
   }
  
@@ -62,4 +59,4 @@ export class UsersService {
 }
 
 
-export { IUsers };
+export { IUser };
