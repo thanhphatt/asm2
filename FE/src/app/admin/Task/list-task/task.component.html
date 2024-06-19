@@ -64,6 +64,7 @@
 
                                                <td>{{ task.priority }}</td>
                                                 <td>
+                                                    <button class="btn btn-primary" [routerLink]="['/tasks', task._id]">Sửa</button>
                                                     <button class="btn btn-danger" (click)="deleteTask(task._id)">Xoá</button>
                                                 </td>
                                             </tr>
