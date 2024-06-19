@@ -1,4 +1,4 @@
-export interface IUser {
+export interface IUsers {
     _id?: { $oid: string };
     username: string;
     password: string;

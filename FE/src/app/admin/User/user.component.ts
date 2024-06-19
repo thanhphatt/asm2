@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // 
-import { IUser } from '../entities/user';// Đảm bảo đường dẫn đúng
+import { IUsers } from '../entities/user';// Đảm bảo đường dẫn đúng
 import { Router } from '@angular/router';
 import { UsersService } from '../services/user.service';
 
@@ -11,7 +11,7 @@ import { UsersService } from '../services/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  users: IUser[] = [];
+  users: IUsers[] = [];
 
   constructor(private userService: UsersService, private router: Router) { }
 
@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
   }
 
   getAllusers() {
-    this.userService.getAllUsers().subscribe(
+    this.userService.getAllusers().subscribe(
       data => {
         console.log('Data received:', data); // Debugging line
         this.users = data;
@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
   
   // Nếu người dùng chọn "OK", tiếp tục xóa
   if (confirmation) {
-    this.userService.deleteUser(id).subscribe(
+    this.userService.deleteuser(id).subscribe(
       response => {
         console.log('User deleted:', response); // Debugging line
         // Cập nhật danh sách người dùng sau khi xóa

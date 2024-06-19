@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../../entities/user';// Đảm bảo đường dẫn đúng
+import { IUsers } from '../../entities/user';// Đảm bảo đường dẫn đúng
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 // import { UsersService } from '../../services/user.service';
@@ -11,7 +11,7 @@ import { UsersService } from '../../services/user.service';
 })
 export class UserDetailComponent implements OnInit {
 
-  user: IUser;
+  user: IUsers;
 
   constructor(private route: ActivatedRoute, private projectService: UsersService, private location: Location) { }
 

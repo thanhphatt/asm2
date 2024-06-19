@@ -37,7 +37,7 @@ import { UserDetailComponent } from './admin/User/user-detail/user-detail.compon
 import { AddUserComponent } from './admin/User/add-user/add-user.component';
 
 
-import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
+// import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
 import { AddTaskComponent } from './admin/task/add-task/add-task.component';
 
 
@@ -66,11 +66,11 @@ import { AddTaskComponent } from './admin/task/add-task/add-task.component';
     AddUserComponent,
     EditTaskComponent,
     EditProjectComponent,
-    EditUserComponent,
+    // EditUserComponent,
     AddTaskComponent,
    
 
-    EditUserComponent,
+    
 
   ],
   imports: [
