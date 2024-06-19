@@ -21,6 +21,7 @@ import { UsersComponent } from './admin/User/user.component';
 import { UserDetailComponent } from './admin/User/user-detail/user-detail.component';
 // import { AddUserComponent } from './add-user/add-user.component';
 import { AddUserComponent } from './admin/User/add-user/add-user.component';
+import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'user/:id', component: UserDetailComponent },
   { path: 'tasks/:id', component: EditTaskComponent },
   { path: 'projects/:id', component: EditProjectComponent },
+  { path: 'users/:id', component: EditUserComponent },
 
 
 ];

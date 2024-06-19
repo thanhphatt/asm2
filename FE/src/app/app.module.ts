@@ -17,7 +17,8 @@ import { AddProjectComponent } from './admin/project/add-project/add-project.com
 import { HttpClientModule } from '@angular/common/http';  // Nhập HttpClientModule
 import { ProjectService } from './admin/services/project.service';
 import { TaskService } from './admin/services/task.service';
-import { UsersService } from './admin/services/user.service';
+// import { UsersService } from './admin/services/user.service';
+import { UserService } from './admin/services/user.service';
 // import { ProjectDetailsComponent } from './project-detail/project-detail.component';
 import { ProjectDetailsComponent } from './admin/project/project-detail/project-detail.component';
 // import { UsersComponent } from './admin/users/users.component';
@@ -64,7 +65,7 @@ import { AddTaskComponent } from './admin/task/add-task/add-task.component';
     HttpClientModule,
     ReactiveFormsModule   // Nhập khẩu HttpClientModule ở đây
   ],
-  providers: [ProjectService, TaskService, UsersService],
+  providers: [ProjectService, TaskService, UserService],
   bootstrap: [AppComponent]
 
 })
