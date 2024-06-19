@@ -40,13 +40,14 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>tên: username</th>
+                      <th>Tên</th>
                       <th>Email</th>
-                      <th>vai trò</th>
+                      <th>Vai trò</th>
                       <th>Team</th>
-                      <th>tạo vào lúc:</th>
-                      <th>chi tiết</th>
-                      <th>hoạt động</th>
+                      <!-- <th>Hình ảnh</th> -->
+                      <th>Ngày tạo</th>
+                      <th>Chi tiết</th>
+                      <th>Thao tác</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -57,6 +58,7 @@
                       <td>{{ user.email }}</td>
                       <td>{{ user.role }}</td>
                       <td>{{ user.team }}</td>
+                      <!-- <td>{{user.image}}</td> -->
                       <td>{{ user.created_at }}</td>
                       <td>
                         <a [routerLink]="['/user', user._id]">Chi tiết</a>

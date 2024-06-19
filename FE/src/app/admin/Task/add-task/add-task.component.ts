@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { TaskService } from '../services/task.service';
 import { TaskService } from '../../services/task.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-task',
@@ -20,7 +21,7 @@ export class AddTaskComponent implements OnInit {
   due_date: string;
   errorMessage: string;
 
-  constructor(private taskService: TaskService, private router: Router) {}
+  constructor(private taskService: TaskService, private router: Router, private location: Location) {}
 
   ngOnInit() {}
 
@@ -43,5 +44,8 @@ export class AddTaskComponent implements OnInit {
         console.error('Error:', err);
       }
     );
+  }
+  onBack(): void {
+    this.location.back();
   }
 }

@@ -1,93 +1,73 @@
-<p>
-  add-task works!
-</p>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mẫu Quản trị Bootstrap Miễn phí: Binary Admin</title>
-    <!-- STYLES CỦA BOOTSTRAP-->
-
-    <link href="assets/admin/css/bootstrap.css" rel="stylesheet" />
-    <!-- STYLES CỦA FONTAWESOME-->
-    <link href="assets/admin/css/font-awesome.css" rel="stylesheet" />
-    <!-- STYLES TÙY CHỈNH-->
-    <link href="assets/admin/css/custom.css" rel="stylesheet" />
-    <!-- FONT CHỮ GOOGLE-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="../../assets/admin/css/bootstrap.css" rel="stylesheet" /> <!-- Import Bootstrap CSS -->
+    <link href="../../assets/admin/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../assets/admin/css/custom.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="wrapper">
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="col-md-12">
-                    <h2>Thêm Task</h2>
+                    <h2 class="tittle">Thêm Task</h2>
                 </div>
-                <form (submit)="createtask()">
-                    <div class="form-group">
-                      <label for="project_id">Project ID</label>
-                      <input type="text" class="form-control" id="project_id" required [(ngModel)]="project_id" name="project_id">
+                <form (ngSubmit)="createtask()">
+                    <div class="form-row formbold-mb-5">
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="project_id">Project ID</label>
+                            <input type="text" id="project_id" name="project_id" [(ngModel)]="project_id" required class="form-control" />
+                        </div>
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="name">Tên Task</label>
+                            <input type="text" id="name" name="name" [(ngModel)]="name" required class="form-control" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                      <label for="name">Tên Task</label>
-                      <input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name">
+                    <div class="formbold-mb-5">
+                        <label class="formbold-form-label" for="description">Mô Tả</label>
+                        <textarea id="description" name="description" [(ngModel)]="description" required class="form-control"></textarea>
                     </div>
-                    <div class="form-group">
-                      <label for="description">Mô Tả</label>
-                      <textarea class="form-control" id="description" required [(ngModel)]="description" name="description"></textarea>
+                    <div class="form-row formbold-mb-5">
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="assignee_id">Người được giao (ID)</label>
+                            <input type="text" id="assignee_id" name="assignee_id" [(ngModel)]="assignee_id" required class="form-control" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                      <label for="assignee_id">Người được giao(ID)</label>
-                      <input type="text" class="form-control" id="assignee_id" required [(ngModel)]="assignee_id" name="assignee_id">
+                    <div class="form-row formbold-mb-5">
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="priority">Mức Độ Ưu Tiên</label>
+                            <select id="priority" name="priority" [(ngModel)]="priority" required class="form-control">
+                                <option value="low">Thấp</option>
+                                <option value="medium">Trung bình</option>
+                                <option value="high">Cao</option>
+                            </select>
+                        </div>
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="status">Trạng thái</label>
+                            <select id="status" name="status" [(ngModel)]="status" required class="form-control">
+                                <option value="to do">Đang chờ</option>
+                                <option value="in progress">Đang tiến hành</option>
+                                <option value="done">Đã hoàn thành</option>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                      <label for="status">Trạng thái</label>
-                      <select class="form-control" id="status" required [(ngModel)]="status" name="status">
-                        <option value="to do">Đang chờ</option>
-                        <option value="in progress">Đang tiến hành</option>
-                        <option value="done ">Đã hoàn thành</option>
-                      </select>
+                    <div class="form-row formbold-mb-5">
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="start_date">Ngày Bắt Đầu</label>
+                            <input type="date" id="start_date" name="start_date" [(ngModel)]="start_date" required class="form-control" />
+                        </div>
+                        <div class="form-column">
+                            <label class="formbold-form-label" for="due_date">Ngày Hoàn Thành</label>
+                            <input type="date" id="due_date" name="due_date" [(ngModel)]="due_date" required class="form-control" />
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                      <label for="priority">Mức Độ Ưu Tiên</label>
-                      <select class="form-control" id="priority" required [(ngModel)]="priority" name="priority">
-                        <option value="low">Thấp</option>
-                        <option value="medium">Trung bình</option>
-                        <option value="high">Cao</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="start_date">Ngày Bắt Đầu</label>
-                      <input type="date" class="form-control" id="start_date" required [(ngModel)]="start_date" name="start_date">
-                    </div>
-
-                    <div class="form-group">
-                      <label for="due_date">Ngày Hoàn Thành</label>
-                      <input type="date" class="form-control" id="due_date" required [(ngModel)]="due_date" name="due_date">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Thêm mới</button>
-                  </form>
-
+                    <button type="submit" class="btn btn-primary">Thêm mới</button> <!-- Sử dụng lớp btn và btn-primary của Bootstrap -->
+                </form>
             </div>
-            <!-- Kết thúc TRANG NỘI BỘ  -->
         </div>
-        <!-- Kết thúc BỌC TRANG  -->
     </div>
-    <!-- Kết thúc BỌC  -->
-    <!-- SCRIPTS - Ở DƯỚI ĐỂ GIẢM THỜI GIAN TẢI-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="assets/admin/js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/admin/js/bootstrap.min.js"></script>
-    <!-- SCRIPTS CỦA METISMENU -->
-    <script src="assets/admin/js/jquery.metisMenu.js"></script>
-    <!-- SCRIPTS TÙY CHỈNH -->
-    <script src="assets/admin/js/custom.js"></script>
 </body>
-
 </html>

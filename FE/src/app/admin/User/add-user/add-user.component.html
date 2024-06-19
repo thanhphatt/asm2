@@ -36,7 +36,7 @@
                     <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
                       <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="username"
-                          >nhập: Username</label
+                          >Username</label
                         >
                         <input
                           type="text"
@@ -82,6 +82,11 @@
                         >
                           <h5>Email không được bỏ trống !</h5>
                         </div>
+                        <!-- <label>Image:</label> -->
+    <!-- <input type="file" (change)="onFileSelected($event)" accept="image/*">
+    <div *ngIf="addUserForm.get('image').value">
+      <img [src]="addUserForm.get('image').value" alt="Selected Image" style="max-width: 200px; max-height: 200px;">
+    </div> -->
                         <div
                           *ngIf="
                             addUserForm.get('email').errors?.email &&
@@ -95,7 +100,7 @@
                       <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                         <div class="col-md-6">
                           <div data-mdb-input-init class="form-outline">
-                            <label class="form-label" for="role">vai trò</label>
+                            <label class="form-label" for="role">Vai trò</label>
                             <input
                               type="text"
                               id="role"
@@ -138,7 +143,7 @@
                         <div class="col-md-6">
                           <div data-mdb-input-init class="form-outline">
                             <label class="form-label" for="created_at"
-                              >tạo vào lúc</label
+                              >Ngày tạo</label
                             >
                             <input
                               type="date"
@@ -166,7 +171,7 @@
                           data-mdb-ripple-init
                           class="btn1"
                         >
-                          TẠO
+                          Lưu
                         </button>
                         <button type="button" (click)="onBack()" class="btn">
                           <i class="fa fa-arrow-left"></i> Quay lại

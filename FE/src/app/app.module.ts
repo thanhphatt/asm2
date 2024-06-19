@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './admin/home/home.component';
 import { FooterComponent } from './admin/footer/footer.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+// import { NgxPaginationModule } from 'ngx-pagination'; 
 
 import { projectsComponent } from './admin/project/list-project/project.component';
 import { TaskComponent } from './admin/task/list-task/task.component';
@@ -61,6 +62,7 @@ import { AddTaskComponent } from './admin/task/add-task/add-task.component';
   imports: [
     BrowserModule,
     FormsModule,
+    // NgxPaginationModule,
     AppRoutingModule,// Add FormsModule here
     HttpClientModule,
     ReactiveFormsModule   // Nhập khẩu HttpClientModule ở đây

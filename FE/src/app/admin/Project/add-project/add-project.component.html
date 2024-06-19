@@ -4,65 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Project</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div id="wrapper">
     <div id="page-wrapper">
       <div id="page-inner">
+        <div class="container">
         <div class="col-md-12">
-          <h1>Thêm Dự Án</h1>
+          <h3 class="tittle">THÊM DỰ ÁN</h3>
         </div>
         <form (ngSubmit)="createproject()" #projectForm="ngForm">
           <div class="form-group">
             <label for="name">Tên</label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" required>
+            <input type="text" class="form-control form-control-sm" id="name" [(ngModel)]="name" name="name" required>
             <div *ngIf="projectForm.controls.name?.invalid && (projectForm.controls.name?.dirty || projectForm.controls.name?.touched)" class="alert alert-danger">Tên là bắt buộc</div>
           </div>
 
           <div class="form-group">
             <label for="description">Mô tả</label>
-            <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description" required>
+            <input type="text" class="form-control form-control-sm" id="description" [(ngModel)]="description" name="description" required>
             <div *ngIf="projectForm.controls.description?.invalid && (projectForm.controls.description?.dirty || projectForm.controls.description?.touched)" class="alert alert-danger">Mô tả là bắt buộc</div>
           </div>
 
           <div class="form-group">
             <label for="leader_id">Leader ID</label>
-            <input type="text" class="form-control" id="leader_id" [(ngModel)]="leader_id" name="leader_id" required>
+            <input type="text" class="form-control form-control-sm" id="leader_id" [(ngModel)]="leader_id" name="leader_id" required>
             <div *ngIf="projectForm.controls.leader_id?.invalid && (projectForm.controls.leader_id?.dirty || projectForm.controls.leader_id?.touched)" class="alert alert-danger">Leader ID là bắt buộc</div>
           </div>
 
           <div class="form-group">
             <label for="start_date">Ngày Bắt đầu</label>
-            <input type="date" class="form-control" id="start_date" [(ngModel)]="start_date" name="start_date" required>
+            <input type="date" class="form-control form-control-sm" id="start_date" [(ngModel)]="start_date" name="start_date" required>
             <div *ngIf="projectForm.controls.start_date?.invalid && (projectForm.controls.start_date?.dirty || projectForm.controls.start_date?.touched)" class="alert alert-danger">Ngày Bắt đầu là bắt buộc</div>
           </div>
 
           <div class="form-group">
             <label for="end_date">Ngày Kết thúc</label>
-            <input type="date" class="form-control" id="end_date" [(ngModel)]="end_date" name="end_date" required>
+            <input type="date" class="form-control form-control-sm" id="end_date" [(ngModel)]="end_date" name="end_date" required>
             <div *ngIf="projectForm.controls.end_date?.invalid && (projectForm.controls.end_date?.dirty || projectForm.controls.end_date?.touched)" class="alert alert-danger">Ngày Kết thúc là bắt buộc</div>
           </div>
 
           <div class="form-group">
             <label for="team">Thành viên Nhóm</label>
-            <input type="text" class="form-control" id="team" [(ngModel)]="team" name="team" required>
+            <input type="text" class="form-control form-control-sm" id="team" [(ngModel)]="team" name="team" required>
             <div *ngIf="projectForm.controls.team?.invalid && (projectForm.controls.team?.dirty || projectForm.controls.team?.touched)" class="alert alert-danger">Thành viên Nhóm là bắt buộc</div>
           </div>
+
           <div class="form-group">
             <label for="budget">Ngân sách</label>
-            <input type="text" class="form-control" id="budget" [(ngModel)]="budget" name="budget" required>
+            <input type="text" class="form-control form-control-sm" id="budget" [(ngModel)]="budget" name="budget" required>
             <div *ngIf="projectForm.controls.budget?.invalid && (projectForm.controls.budget?.dirty || projectForm.controls.budget?.touched)" class="alert alert-danger">Ngân sách là bắt buộc</div>
           </div>
 
           <div class="form-group">
             <label for="status">Trạng thái</label>
-            <select class="form-control" id="status" [(ngModel)]="status" name="status" required>
-              <option value="ongoing">đang làm </option>
-              <option value="completed">chờ xác nhận</option>
-              <option value="pending">đang viết</option>
-             
+            <select class="form-control form-control-sm" id="status" [(ngModel)]="status" name="status" required>
+              <option value="ongoing">Đang làm</option>
+              <option value="completed">Chờ xác nhận</option>
+              <option value="pending">Đang viết</option>
             </select>
           </div>
+
           <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Thêm mới</button>
         </form>
 
@@ -73,5 +76,8 @@
       </div>
     </div>
   </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
