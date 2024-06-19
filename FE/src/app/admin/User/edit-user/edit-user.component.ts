@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
-import { IUser } from '../../entities/user';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from '../../services/user.service';
+import { Location } from '@angular/common';
+import { Router, ActivatedRoute } from '@angular/router';
+import { IUsers } from '../../services/user.service';
+
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  user: IUser = {
-    _id: { $oid: '' },
-    username: '',
-    password: '',
-    email: '',
-    role: '',
-    team: '',
-    image: '',
-    created_at: '',
-    // updated_at: ''
-  };
+  editUserForm: FormGroup;
+  errorMessage: string = '';
+  isLoading: boolean = true;
+  userId: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -78,5 +74,10 @@ export class EditUserComponent implements OnInit {
     } else {
       console.error('User ID is undefined or user is not properly initialized, cannot update user.');
     }
+  }
+  
+
+  onBack() {
+    this.location.back();
   }
 }

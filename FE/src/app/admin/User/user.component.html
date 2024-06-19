@@ -27,7 +27,7 @@
               <h2>Danh Sách Khách Hàng</h2>
             </div>
             <div class="col-md-12 text-right">
-              <button onclick="location.href='/add-user'" class="btn1">
+              <button [routerLink]="['/add-user']" class="btn1">
                 Thêm mới
               </button>
             </div>
@@ -42,12 +42,11 @@
                       <th>ID</th>
                       <th>Tên</th>
                       <th>Email</th>
-                      <th>Vai trò</th>
+                      <th>vai trò</th>
                       <th>Team</th>
-                      <!-- <th>Hình ảnh</th> -->
-                      <th>Ngày tạo</th>
-                      <th>Chi tiết</th>
-                      <th>Thao tác</th>
+                      <th>tạo vào lúc:</th>
+                      <th>chi tiết</th>
+                      <th>hoạt động</th>
                     </tr>
                   </thead>
                   <tbody>

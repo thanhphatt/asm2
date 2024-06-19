@@ -22,7 +22,11 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit() {
     this.addUserForm = this.fb.group({
+<<<<<<< Updated upstream
       username: ['', [Validators.required, Validators.minLength(2)]],
+=======
+      username: ['', Validators.required],
+>>>>>>> Stashed changes
       email: ['', [Validators.required, Validators.email]],
       role: ['', Validators.required],
       team: [''],
@@ -56,6 +60,7 @@ export class AddUserComponent implements OnInit {
   get username() { return this.addUserForm.get('username'); }
   get email() { return this.addUserForm.get('email'); }
   get role() { return this.addUserForm.get('role'); }
+  get team() { return this.addUserForm.get('team'); }
   get created_at() { return this.addUserForm.get('created_at'); }
 
   // Xử lý sự kiện khi người dùng chọn file hình ảnh

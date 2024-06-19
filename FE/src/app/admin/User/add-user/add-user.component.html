@@ -54,6 +54,7 @@
                         >
                           <h5>Username không được bỏ trống !</h5>
                         </div>
+<<<<<<< Updated upstream
                         <div
                           *ngIf="
                             addUserForm.get('username').errors?.minlength &&
@@ -64,6 +65,10 @@
                           <h5>Username phải trên 2 ký tự !</h5>
                         </div>
                       </div>
+=======
+                      </div>
+
+>>>>>>> Stashed changes
                       <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="email">Email</label>
                         <input
@@ -129,6 +134,7 @@
                               placeholder="Team"
                               formControlName="team"
                             />
+<<<<<<< Updated upstream
                             <div
                               *ngIf="
                                 addUserForm.get('team').errors?.required &&
@@ -140,6 +146,14 @@
                             </div>
                           </div>
                         </div>
+=======
+                            <div *ngIf="addUserForm.get('team').errors?.required && addUserForm.get('team').touched" class="text-danger">
+                              <h5>Role không được bỏ trống !</h5>
+                            </div>
+                          </div>
+                        </div>
+
+>>>>>>> Stashed changes
                         <div class="col-md-6">
                           <div data-mdb-input-init class="form-outline">
                             <label class="form-label" for="created_at"

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -8,9 +8,13 @@ import { IUser } from '../entities/user';
  // Đảm bảo đường dẫn đúng
 
 @Injectable()
-export class UserService {  // Đảm bảo đúng tên class
+export class UsersService {
   private url = 'http://localhost:4000/api/user';
 
+=======
+  
+  private url = 'http://localhost:4000/api/users';
+>>>>>>> Stashed changes
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<IUser[]> {
@@ -38,10 +42,10 @@ export class UserService {  // Đảm bảo đúng tên class
       .catch(this.handleError);
   }
 
-  updateUser(id: string, user: IUser): Observable<IUser> {
-    return this.http.put<IUser>(`${this.url}/${id}`, user)
-      .catch(this.handleError);
+  updateUser(user: IUsers): Observable<any> {
+    return this.http.put(`${this.url}/${user._id}`, user);
   }
+ 
 
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
@@ -56,3 +60,6 @@ export class UserService {  // Đảm bảo đúng tên class
     return Observable.throw(errorMessage);
   }
 }
+
+
+export { IUsers };
