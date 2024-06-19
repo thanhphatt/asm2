@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< Updated upstream
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../services/user.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IUsers } from '../../services/user.service';
+=======
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from '../../services/user.service';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-edit-user',
@@ -11,6 +17,7 @@ import { IUsers } from '../../services/user.service';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
+<<<<<<< Updated upstream
   editUserForm: FormGroup;
   errorMessage: string = '';
   isLoading: boolean = true;
@@ -82,5 +89,63 @@ export class EditUserComponent implements OnInit {
 
   onBack() {
     this.location.back();
+=======
+  // editUserForm: FormGroup;
+  // userId: string;
+  // errorMessage: string;
+
+  constructor(
+    // private route: ActivatedRoute,
+    private router: Router,
+    // private formBuilder: FormBuilder,
+    // private userService: UsersService
+  ) { }
+
+  ngOnInit(): void {
+    // this.editUserForm = this.formBuilder.group({
+    //   username: ['', Validators.required],
+    //   email: ['', [Validators.required, Validators.email]],
+    //   role: ['', Validators.required],
+    //   team: ['', Validators.required],
+    //   created_at: ['', Validators.required]
+    // });
+
+    // const id = this.route.snapshot.params['id'];
+    // this.userService.getUserById(id).subscribe(
+    //   user => {
+    //     this.userId = typeof user._id === 'string' ? user._id : user._id.$oid;
+    //     this.editUserForm.patchValue({
+    //       username: user.username,
+    //       email: user.email,
+    //       role: user.role,
+    //       team: user.team,
+    //       created_at: user.created_at
+    //     });
+    //   },
+    //   error => {
+    //     console.error('Error getting user:', error);
+    //     this.errorMessage = 'Error loading user details';
+    //   }
+    // );
+  }
+
+  // onSubmit(): void {
+  //   // if (this.editUserForm.valid) {
+  //   //   this.userService.updateUser(this.userId, this.editUserForm.value).subscribe(
+  //   //     () => {
+  //   //       console.log('User updated successfully');
+  //   //       this.router.navigate(['/users']); // Navigate back to user list after successful update
+  //   //     },
+  //   //     error => {
+  //   //       console.error('Error updating user:', error);
+  //   //       this.errorMessage = 'Error updating user details';
+  //   //     }
+  //   //   );
+  //   // }
+  // }
+
+  onBack(): void {
+    this.router.navigate(['/users']); // Navigate back to user list
+>>>>>>> Stashed changes
   }
 }

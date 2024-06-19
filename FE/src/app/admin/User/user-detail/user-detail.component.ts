@@ -17,15 +17,19 @@ export class UserDetailComponent implements OnInit {
   ngOnInit() {
     // Lấy ID từ thanh địa chỉ (URL)
     const id = this.route.snapshot.paramMap.get('id');
-    this.getProjectDetail(id);
+    this.getUserDetail(id);
   }
 
-  getProjectDetail(id: string) {
+  getUserDetail(id: string) {
     this.projectService.getUserById(id).subscribe(
       data => {
         this.user = data;
       },
+<<<<<<< Updated upstream
       error => console.error('Lỗi khi lấy chi tiết:', error)
+=======
+      error => console.error('Lỗi khi lấy chi tiết người dùng:', error)
+>>>>>>> Stashed changes
     );
   }
   onBack(): void {

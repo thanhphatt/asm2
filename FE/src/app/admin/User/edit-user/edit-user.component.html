@@ -32,6 +32,7 @@
                     alt="Sample photo"
                   />
                   <div class="card-body p-4 p-md-5">
+<<<<<<< Updated upstream
                     <h3 class="title">Edit User</h3>
                     <div *ngIf="!isLoading; else loading">
                       <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
@@ -173,6 +174,104 @@
                         </div>
                       </form>
                     </div>
+=======
+                    <h3 class="title">Edit</h3>
+                    <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+                      <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="username">Username</label>
+                        <input
+                          type="text"
+                          id="username"
+                          class="form-control"
+                          placeholder="Username"
+                          formControlName="username"
+                        />
+                        <div *ngIf="editUserForm.get('username').errors?.required && editUserForm.get('username').touched" class="text-danger">
+                          <h5>Username không được bỏ trống!</h5>
+                        </div>
+                      </div>
+
+                      <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                          placeholder="Email"
+                          formControlName="email"
+                        />
+                        <div *ngIf="editUserForm.get('email').errors?.required && editUserForm.get('email').touched" class="text-danger">
+                          <h5>Email không được bỏ trống!</h5>
+                        </div>
+                        <div *ngIf="editUserForm.get('email').errors?.email && editUserForm.get('email').touched" class="text-danger">
+                          <h5>Email không hợp lệ!</h5>
+                        </div>
+                      </div>
+                      <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                        <div class="col-md-6">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="role">Role</label>
+                            <input
+                              type="text"
+                              id="role"
+                              class="form-control"
+                              placeholder="Role"
+                              formControlName="role"
+                            />
+                            <div *ngIf="editUserForm.get('role').errors?.required && editUserForm.get('role').touched" class="text-danger">
+                              <h5>Role không được bỏ trống!</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="team">Team</label>
+                            <input
+                              type="text"
+                              id="team"
+                              class="form-control"
+                              placeholder="Team"
+                              formControlName="team"
+                            />
+                            <div *ngIf="editUserForm.get('team').errors?.required && editUserForm.get('team').touched" class="text-danger">
+                              <h5>Team không được bỏ trống!</h5>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="created_at">Create At</label>
+                            <input
+                              type="date"
+                              id="created_at"
+                              class="form-control"
+                              formControlName="created_at"
+                            />
+                            <div *ngIf="editUserForm.get('created_at').errors?.required && editUserForm.get('created_at').touched" class="text-danger">
+                              <h5>Create At không được bỏ trống!</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <button
+                          type="submit"
+                          data-mdb-button-init
+                          data-mdb-ripple-init
+                          class="btn1"
+                        >
+                          Submit
+                        </button>
+                        <button type="button" (click)="onBack()" class="btn">
+                          <i class="fa fa-arrow-left"></i> Quay lại
+                        </button>
+                      </div>
+                      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                        {{ errorMessage }}
+                      </div>
+                    </form>
+>>>>>>> Stashed changes
                   </div>
                 </div>
               </div>

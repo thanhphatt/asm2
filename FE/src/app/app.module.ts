@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +13,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { projectsComponent } from './admin/project/list-project/project.component';
 import { TaskComponent } from './admin/task/list-task/task.component';
 import { LoginComponent } from './login/login.component';
+<<<<<<< Updated upstream
 // import { AddTaskComponent } from './admin/task/add-task/add-task.component';
 
 import { AddProjectComponent } from './admin/project/add-project/add-project.component';
@@ -25,13 +28,27 @@ import { ProjectDetailsComponent } from './admin/project/project-detail/project-
 // import { AddUserComponent } from './add-user/add-user.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+=======
+import { AddTaskComponent } from './admin/Task/add-task/add-task.component';
+import { AddProjectComponent } from './admin/Project/add-project/add-project.component';
+import { ProjectDetailsComponent } from './admin/Project/project-detail/project-detail.component';
+>>>>>>> Stashed changes
 
 import { UsersComponent } from './admin/User/user.component';
 import { UserDetailComponent } from './admin/User/user-detail/user-detail.component';
 import { AddUserComponent } from './admin/User/add-user/add-user.component';
+<<<<<<< Updated upstream
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
 import { AddTaskComponent } from './admin/task/add-task/add-task.component';
+=======
+import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
+
+import { ProjectService } from './admin/services/project.service';
+import { TaskService } from './admin/services/task.service';
+import { UsersService } from './admin/services/user.service';
+
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +62,10 @@ import { AddTaskComponent } from './admin/task/add-task/add-task.component';
     // AddTaskComponent,
     AddProjectComponent,
     ProjectDetailsComponent,
-    UserDetailComponent,
     UsersComponent,
+    UserDetailComponent,
     AddUserComponent,
+<<<<<<< Updated upstream
     // Updatedupstream,
     UserDetailComponent,
     AddUserComponent,
@@ -56,16 +74,24 @@ import { AddTaskComponent } from './admin/task/add-task/add-task.component';
     EditUserComponent,
     AddTaskComponent
    
+=======
+    EditUserComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
     FormsModule,
+<<<<<<< Updated upstream
     AppRoutingModule,// Add FormsModule here
     HttpClientModule,
     ReactiveFormsModule   // Nhập khẩu HttpClientModule ở đây
+=======
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
+>>>>>>> Stashed changes
   ],
   providers: [ProjectService, TaskService, UsersService],
   bootstrap: [AppComponent]
-
 })
 export class AppModule { }

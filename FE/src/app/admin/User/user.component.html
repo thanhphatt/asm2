@@ -27,7 +27,7 @@
               <h2>Danh Sách Khách Hàng</h2>
             </div>
             <div class="col-md-12 text-right">
-              <button onclick="location.href='/add-user'" class="btn1">
+              <button [routerLink]="['/add-user']" class="btn1">
                 Thêm mới
               </button>
             </div>
@@ -42,11 +42,19 @@
                       <th>ID</th>
                       <th>tên: username</th>
                       <th>Email</th>
+<<<<<<< Updated upstream
                       <th>vai trò</th>
                       <th>Team</th>
                       <th>tạo vào lúc:</th>
                       <th>chi tiết</th>
                       <th>hoạt động</th>
+=======
+                      <th>Role</th>
+                      <th>Team</th>
+                      <th>Created At</th>
+                      <th>Detail</th>
+                      <th>Actions</th>
+>>>>>>> Stashed changes
                     </tr>
                   </thead>
                   <tbody>
@@ -64,7 +72,10 @@
                       <td>
                         <button type="button" class="btn btn-primary" [routerLink]="'/edit-user/' + user._id">Sửa</button>
                         <button type="button" class="btn btn-danger" (click)="deleteUser(user._id)">Xóa</button>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                       </td>
                     </tr>
                   </tbody>
