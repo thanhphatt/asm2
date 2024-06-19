@@ -1,73 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Project</title>
-    <style>
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        input[type="text"], textarea, input[type="date"] {
-            width: calc(100% - 22px);
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #000;
-            border-radius: 3px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Add Project</h2>
-        <form>
-            <table>
-                <tr>
-                    <td><label for="projectName">Project Name:</label></td>
-                    <td><input type="text" id="projectName" name="projectName" required></td>
-                </tr>
-                <tr>
-                    <td><label for="projectDescription">Description:</label></td>
-                    <td><textarea id="projectDescription" name="projectDescription" rows="4" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="startDate">Start Date:</label></td>
-                    <td><input type="date" id="startDate" name="startDate" required></td>
-                </tr>
-                <tr>
-                    <td><label for="endDate">End Date:</label></td>
-                    <td><input type="date" id="endDate" name="endDate" required></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Add Project"></td>
-                </tr>
-            </table>
-        </form>
-    </div>
-</body>
-</html>
+<div class="formbold-main-wrapper" id="form">
+  <!-- Author: FormBold Team -->
+  <!-- Learn More: https://formbold.com -->
+  <div  class="formbold-form-wrapper">
+    <form  action="https://formbold.com/s/FORM_ID" method="POST">
+        <h3 class="tittle">ADD TASK</h3>
+      <div class="flex flex-wrap formbold--mx-3">
+        <div class="w-full sm:w-half formbold-px-3">
+          <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="projectName">Project Name </label>
+            <input
+              type="text"
+              name="projectName"
+              id="projectName"
+              placeholder="Project Name"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+        <div class="w-full sm:w-half formbold-px-3">
+          <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="projectDescription">Description</label>
+            <input
+              type="text"
+              name="projectDescription"
+              id="projectDescription"
+              placeholder="Description"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex flex-wrap formbold--mx-3">
+        <div class="w-full sm:w-half formbold-px-3">
+          <div class="formbold-mb-5 w-full">
+            <label for="startDate" class="formbold-form-label"> Start Date </label>
+            <input
+              type="date"
+              name="startDate"
+              id="startDate"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+        <div class="w-full sm:w-half formbold-px-3">
+          <div class="formbold-mb-5">
+            <label for="startDate" class="formbold-form-label"> End Date </label>
+            <input
+              type="date"
+              name="endDate"
+              id="endDate"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn1">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+

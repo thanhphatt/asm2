@@ -43,10 +43,8 @@
                       <th>Username</th>
                       <th>Email</th>
                       <th>Role</th>
-                      <th>Image</th>
                       <th>Team</th>
                       <th>Created At</th>
-                      <th>Updated At</th>
                       <th>Detail</th>
                       <th>Actions</th>
                     </tr>
@@ -58,16 +56,14 @@
                       <td [routerLink]="['/user', user._id]">{{ user.username }}</td>
                       <td>{{ user.email }}</td>
                       <td>{{ user.role }}</td>
-                      <td>{{ user.image }}</td>
                       <td>{{ user.team }}</td>
                       <td>{{ user.created_at }}</td>
-                      <td>{{ user.updated_at }}</td>
                       <td>
                         <a [routerLink]="['/user', user._id]">Chi tiết</a>
                       </td>
                       <td>
                         <button type="button" class="btn btn-primary">Sửa</button>
-                        <button type="button" class="btn btn-danger">Xóa</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteUser()._id">Xóa</button>
                       </td>
                     </tr>
                   </tbody>
