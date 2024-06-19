@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../services/user.service';
-import { IUsers } from '../entities/user';// Đảm bảo đường dẫn đúng
+// 
+import { IUser } from '../entities/user';// Đảm bảo đường dẫn đúng
 import { Router } from '@angular/router';
-
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-  users: IUsers[] = [];
+  users: IUser[] = [];
 
-  constructor(private userService: UsersService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.getAllusers();

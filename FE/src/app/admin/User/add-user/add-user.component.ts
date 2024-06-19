@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from '../../services/user.service';
+// import { UsersService } from '../../services/user.service';
+
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -15,7 +17,7 @@ export class AddUserComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userService: UsersService,
+    private userService: UserService,
     private router: Router,
     private location: Location
   ) {}

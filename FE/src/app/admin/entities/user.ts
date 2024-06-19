@@ -1,4 +1,4 @@
-export interface IUsers {
+export interface IUser {
     _id?: { $oid: string };
     username: string;
     password: string;
@@ -7,5 +7,5 @@ export interface IUsers {
     team: string;
     image: string;
     created_at: string;
-    updated_at: string;
+    // updated_at: string;
 }

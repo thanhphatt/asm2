@@ -10,6 +10,7 @@ const userSchema = new Schema({
     image: { type: String, required: false },
     role: { type: String, enum: ['admin', 'user'], required: true }, // Include 'user' in enum
     team: { type: String, required: true },
+    
     created_at: { type: Date, default: Date.now },
 });
 =======

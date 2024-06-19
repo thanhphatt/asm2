@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IUsers } from '../../entities/user';// Đảm bảo đường dẫn đúng
+import { IUser } from '../../entities/user';// Đảm bảo đường dẫn đúng
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { UsersService } from '../../services/user.service';
+// import { UsersService } from '../../services/user.service';
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -10,9 +11,9 @@ import { UsersService } from '../../services/user.service';
 })
 export class UserDetailComponent implements OnInit {
 
-  user: IUsers;
+  user: IUser;
 
-  constructor(private route: ActivatedRoute, private projectService: UsersService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private projectService: UserService, private location: Location) { }
 
   ngOnInit() {
     // Lấy ID từ thanh địa chỉ (URL)

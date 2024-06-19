@@ -22,9 +22,6 @@ import { UserDetailComponent } from './admin/User/user-detail/user-detail.compon
 <<<<<<< Updated upstream
 // import { AddUserComponent } from './add-user/add-user.component';
 import { AddUserComponent } from './admin/User/add-user/add-user.component';
-=======
-import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,6 +42,7 @@ const routes: Routes = [
 <<<<<<< Updated upstream
   { path: 'tasks/:id', component: EditTaskComponent },
   { path: 'projects/:id', component: EditProjectComponent },
+  { path: 'users/:id', component: EditUserComponent },
 
 =======
   { path: 'edit-user/:id', component: EditUserComponent },

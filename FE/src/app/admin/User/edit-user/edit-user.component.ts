@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< Updated upstream
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../services/user.service';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IUsers } from '../../services/user.service';
-=======
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from '../../services/user.service';
->>>>>>> Stashed changes
 
 @Component({
   selector: 'app-edit-user',
@@ -17,135 +11,73 @@ import { UsersService } from '../../services/user.service';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-<<<<<<< Updated upstream
   editUserForm: FormGroup;
   errorMessage: string = '';
   isLoading: boolean = true;
   userId: string;
 
   constructor(
-    private fb: FormBuilder,
-    private userService: UsersService,
-    private router: Router,
     private route: ActivatedRoute,
-    private location: Location
-  ) {}
+    private router: Router,
+    private userService: UserService
+  ) { }
 
-  ngOnInit() {
-    this.userId = this.route.snapshot.paramMap.get('id');
-  
-    this.editUserForm = this.fb.group({
-      _id: [''],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      email: ['', [Validators.required, Validators.email]],
-      role: ['', Validators.required],
-      team: [''],
-      created_at: ['', Validators.required] // Ensure form control names match with those in the template
-    });
-  
-    if (this.userId) {
-      this.loadUserData(this.userId);
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.getUser(id);
     } else {
-      this.isLoading = false;
+      console.error('User ID is not provided in the route.');
     }
   }
-  
-  loadUserData(id: string) {
+
+  getUser(id: string): void {
     this.userService.getUserById(id).subscribe(
-      (user: IUsers) => {
-        this.editUserForm.patchValue(user); // Patch the form with user data
-        this.isLoading = false;
+      (data: IUser) => {
+        if (data) {
+          this.user = data;
+          console.log('User assigned:', this.user);
+        } else {
+          console.error('API response does not contain user data');
+        }
       },
-      (error) => {
-        console.error('Error retrieving user:', error);
-        this.errorMessage = 'Error retrieving user. Please try again later.';
-        this.isLoading = false;
+      error => {
+        console.error('Error fetching user:', error);
       }
     );
   }
-  
 
-  onSubmit() {
-    if (this.editUserForm.valid) {
-      const userData = this.editUserForm.value;
-  
-      this.userService.updateUser(userData).subscribe(
-        (response) => {
-          console.log('User updated successfully!', response);
-          this.router.navigate(['/users']); // Navigate to user list or another appropriate page
+  updateUser(): void {
+    console.log('Updating user:', this.user);
+    
+    let userId: string | undefined;
+
+    // Kiểm tra nếu _id là một đối tượng chứa $oid
+    if (this.user._id && typeof this.user._id === 'object' && '$oid' in this.user._id) {
+      userId = this.user._id.$oid;
+    } 
+    // Kiểm tra nếu _id là một chuỗi
+    else if (typeof this.user._id === 'string') {
+      userId = this.user._id;
+    }
+
+    if (userId) {
+      this.userService.updateUser(userId, this.user).subscribe(
+        response => {
+          console.log('User updated:', response);
+          this.router.navigate(['/user']);
         },
-        (error) => {
+        error => {
           console.error('Error updating user:', error);
-          this.errorMessage = 'Error updating user. Please try again later.';
         }
       );
     } else {
-      console.warn('Form is invalid', this.editUserForm);
-      this.editUserForm.markAsTouched(); // Mark all fields as touched to trigger validation messages
+      console.error('User ID is undefined or user is not properly initialized, cannot update user.');
     }
   }
   
 
   onBack() {
     this.location.back();
-=======
-  // editUserForm: FormGroup;
-  // userId: string;
-  // errorMessage: string;
-
-  constructor(
-    // private route: ActivatedRoute,
-    private router: Router,
-    // private formBuilder: FormBuilder,
-    // private userService: UsersService
-  ) { }
-
-  ngOnInit(): void {
-    // this.editUserForm = this.formBuilder.group({
-    //   username: ['', Validators.required],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   role: ['', Validators.required],
-    //   team: ['', Validators.required],
-    //   created_at: ['', Validators.required]
-    // });
-
-    // const id = this.route.snapshot.params['id'];
-    // this.userService.getUserById(id).subscribe(
-    //   user => {
-    //     this.userId = typeof user._id === 'string' ? user._id : user._id.$oid;
-    //     this.editUserForm.patchValue({
-    //       username: user.username,
-    //       email: user.email,
-    //       role: user.role,
-    //       team: user.team,
-    //       created_at: user.created_at
-    //     });
-    //   },
-    //   error => {
-    //     console.error('Error getting user:', error);
-    //     this.errorMessage = 'Error loading user details';
-    //   }
-    // );
-  }
-
-  // onSubmit(): void {
-  //   // if (this.editUserForm.valid) {
-  //   //   this.userService.updateUser(this.userId, this.editUserForm.value).subscribe(
-  //   //     () => {
-  //   //       console.log('User updated successfully');
-  //   //       this.router.navigate(['/users']); // Navigate back to user list after successful update
-  //   //     },
-  //   //     error => {
-  //   //       console.error('Error updating user:', error);
-  //   //       this.errorMessage = 'Error updating user details';
-  //   //     }
-  //   //   );
-  //   // }
-  // }
-
-  onBack(): void {
-    this.router.navigate(['/users']); // Navigate back to user list
->>>>>>> Stashed changes
   }
 }
