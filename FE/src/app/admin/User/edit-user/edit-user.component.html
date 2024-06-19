@@ -1,0 +1,126 @@
+<p>
+  edit-user works!
+</p>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sửa Thông Tin Nhân Viên</title>
+  <link href="../../assets/admin/css/bootstrap.css" rel="stylesheet" />
+  <link href="../../assets/admin/css/font-awesome.css" rel="stylesheet" />
+  <link href="../../assets/admin/css/custom.css" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <section class="h-100 h-custom">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+              <div class="card rounded-3">
+                <div class="card-body p-4 p-md-5">
+                  <h3 class="title">SỬA THÔNG TIN NHÂN VIÊN</h3>
+                  <form #editUserForm="ngForm" (ngSubmit)="updateUser()">
+                    <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text"
+                        id="username"
+                        class="form-control"
+                        placeholder="Username"
+                        name="username"
+                        required
+                        [(ngModel)]="user.username">
+                      <div *ngIf="editUserForm.controls['username'].invalid && (editUserForm.controls['username'].dirty || editUserForm.controls['username'].touched)"
+                        class="text-danger">
+                        <div *ngIf="editUserForm.controls['username'].errors.required">
+                          <h5>Username không được bỏ trống!</h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="Email"
+                        name="email"
+                        required
+                        email
+                        [(ngModel)]="user.email">
+                      <div *ngIf="editUserForm.controls['email'].invalid && (editUserForm.controls['email'].dirty || editUserForm.controls['email'].touched)"
+                        class="text-danger">
+                        <div *ngIf="editUserForm.controls['email'].errors.required">
+                          <h5>Email không được bỏ trống!</h5>
+                        </div>
+                        <div *ngIf="editUserForm.controls['email'].errors.email">
+                          <h5>Email không hợp lệ!</h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="role">Vai trò</label>
+                          <input type="text"
+                            id="role"
+                            class="form-control"
+                            placeholder="Role"
+                            name="role"
+                            required
+                            [(ngModel)]="user.role">
+                          <div *ngIf="editUserForm.controls['role'].invalid && (editUserForm.controls['role'].dirty || editUserForm.controls['role'].touched)"
+                            class="text-danger">
+                            <div *ngIf="editUserForm.controls['role'].errors.required">
+                              <h5>Vai trò không được bỏ trống!</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="team">Team</label>
+                          <input type="text"
+                            id="team"
+                            class="form-control"
+                            placeholder="Team"
+                            name="team"
+                            required
+                            [(ngModel)]="user.team">
+                          <div *ngIf="editUserForm.controls['team'].invalid && (editUserForm.controls['team'].dirty || editUserForm.controls['team'].touched)"
+                            class="text-danger">
+                            <div *ngIf="editUserForm.controls['team'].errors.required">
+                              <h5>Team không được bỏ trống!</h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Lưu</button>
+                      <button type="button" class="btn btn-default" (click)="onBack()">
+                        <i class="fa fa-arrow-left"></i> Quay lại
+                      </button>
+                    </div>
+
+                    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                      {{ errorMessage }}
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- CUSTOM SCRIPTS -->
+  <script src="../../assets/admin/js/custom.js"></script>
+</body>
+</html>

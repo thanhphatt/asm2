@@ -39,6 +39,7 @@ import { AddUserComponent } from './admin/User/add-user/add-user.component';
 
 // import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
 import { AddTaskComponent } from './admin/task/add-task/add-task.component';
+import { EditUserComponent } from './admin/User/edit-user/edit-user.component';
 
 
 
@@ -68,6 +69,7 @@ import { AddTaskComponent } from './admin/task/add-task/add-task.component';
     EditProjectComponent,
     // EditUserComponent,
     AddTaskComponent,
+    EditUserComponent,
    
 
     

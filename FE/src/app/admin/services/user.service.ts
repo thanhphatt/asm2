@@ -35,16 +35,9 @@ export class UsersService {
       .catch(this.handleError);
   }
   
-  updateuser(user: IUsers): Observable<IUsers> {
-    if (user._id && user._id) {
-      const userId = user._id;
-      return this.http.put<IUsers>(`${this.url}/${userId}`, user)
-        .catch(this.handleError);
-    } else {
-      // Xử lý khi _id không hợp lệ
-      console.error('ID user không hợp lệ!');
-      return Observable.throw('ID user không hợp lệ!');
-    }
+  updateUser(id: string, user: IUsers): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this.http.put<any>(url, user);
   }
 
   private handleError(error: HttpErrorResponse) {
